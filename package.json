@@ -1,14 +1,14 @@
 {
-  "name": "roots",
-  "version": "7.0.0",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "http://roots.io",
+  "name": "souvvi-2015-theme",
+  "version": "0.1",
+  "author": "Perttu Ristimella <hello@pertturistimella.com>",
+  "homepage": "http://www.souvvi.com",
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/roots.git"
+    "url": "git://github.com/ristinolla/souvvi-2015-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/roots/issues"
+    "url": "https://github.com/ristinolla/souvvi-2015-theme/issues"
   },
   "licenses": [
     {

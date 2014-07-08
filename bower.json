@@ -1,9 +1,9 @@
 {
-  "name": "roots",
-  "version": "7.0.0",
-  "homepage": "http://roots.io",
+  "name": "souvvi-2015-theme",
+  "version": "0.1",
+  "homepage": "http://www.souvvi.com",
   "authors": [
-    "Ben Word <ben@benword.com>"
+    "Perttu Ristimella <hello@pertturistimella.com>"
   ],
   "license": "MIT",
   "private": true,
