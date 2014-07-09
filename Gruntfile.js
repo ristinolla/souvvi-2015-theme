@@ -18,6 +18,7 @@ module.exports = function(grunt) {
     'assets/vendor/bootstrap/js/scrollspy.js',
     'assets/vendor/bootstrap/js/tab.js',
     'assets/vendor/bootstrap/js/affix.js',
+    'assets/vendor/typehead.js/dist/typehead.bundle.js',
     'assets/js/plugins/*.js',
     'assets/js/_*.js'
   ];
@@ -142,7 +143,7 @@ module.exports = function(grunt) {
         // Browser live reloading
         // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
         options: {
-          livereload: false
+          livereload: true
         },
         files: [
           'assets/css/main.css',

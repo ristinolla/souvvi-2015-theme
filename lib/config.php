@@ -3,7 +3,7 @@
  * Enable theme features
  */
 add_theme_support('soil-clean-up');         // Enable clean up from Soil
-add_theme_support('soil-relative-urls');    // Enable relative URLs from Soil
+//add_theme_support('soil-relative-urls');    // Enable relative URLs from Soil
 add_theme_support('soil-nice-search');      // Enable /?s= to /search/ redirect from Soil
 add_theme_support('bootstrap-gallery');     // Enable Bootstrap's thumbnails component on [gallery]
 add_theme_support('jquery-cdn');            // Enable to load jQuery from the Google CDN
@@ -11,7 +11,7 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
 /**
  * Configuration values
  */
-define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
+define('GOOGLE_ANALYTICS_ID', 'UA-26185197-1'); // UA-XXXXX-Y (Note: Universal Analytics only, not Classic Analytics)
 
 /**
  * .main classes
@@ -19,7 +19,7 @@ define('GOOGLE_ANALYTICS_ID', ''); // UA-XXXXX-Y (Note: Universal Analytics only
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'col-sm-8';
+    $class = 'col-xs-12 col-sm-7 col-md-8 page-content';
   } else {
     // Classes on full width pages
     $class = 'col-sm-12';
@@ -32,7 +32,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return apply_filters('roots/sidebar_class', 'col-sm-4');
+  return apply_filters('roots/sidebar_class', 'col-xs-12 col-sm-5 col-md-4');
 }
 
 /**
@@ -75,4 +75,4 @@ function roots_display_sidebar() {
  * Example: If the content area is 640px wide, set $content_width = 620; so images and videos will not overflow.
  * Default: 1140px is the default Bootstrap container width.
  */
-if (!isset($content_width)) { $content_width = 1140; }
+if (!isset($content_width)) { $content_width = 940; }
