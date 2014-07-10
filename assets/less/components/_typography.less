@@ -1,0 +1,45 @@
+// Typography
+// ==========
+
+body {
+  font-size: @baseFontSize;
+  line-height: 1.6;
+  font-family: @sans-serif;
+  font-weight: @lightWeight;
+  color: @fontColor;
+
+}
+
+
+
+
+.muted {
+  color: @muted;
+  a {
+    color: darken(@muted, 4%);
+    &:hover {
+      color: darken(@brand, 10%);
+      text-decoration: none;
+    }
+  }
+}
+
+
+a {
+  color: @brand;
+  &:hover {
+    color: darken(@brand, 10%);
+  }
+}
+
+
+h2 {
+  font-family: @sans-serif;
+  font-weight: @lightWeight;
+  line-height: 1.4;
+  font-size: 1.8em;
+
+  @media (min-width: @md) {
+    font-size: 2em;
+  }
+}

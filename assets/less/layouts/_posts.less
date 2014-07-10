@@ -1,5 +1,69 @@
-.hentry header { }
-.hentry time { }
-.hentry .byline { }
-.hentry .entry-content { }
-.hentry footer { }
+.hentry {
+  margin-bottom: @basemargin*1.5;
+
+  .entry-content p {
+    font-size: 1em;
+    line-height: 1.8em;
+    margin: @basemargin 0;
+
+    text-align: justify;
+  }
+
+
+
+  > header, .entry-content p, > footer {
+    .centered();
+    .content();
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  h2 {
+    color: @brand;
+    border-bottom: @border;
+    margin-bottom: 0;
+
+  }
+  > header {
+    margin-bottom: @basemargin;
+  }
+  > footer {
+
+  }
+
+  figure, .wp-caption {
+    margin: 0;
+    > a, > img {
+      display: block;
+      .centered();
+      &+figcaption {
+        .centered();
+      }
+
+      &.full-width, &.super {
+        width: 100%;
+        margin: 0;
+        &+figcaption {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+  figcaption.caption {
+    background: @miscBg;
+    padding: @basemargin/4 @basemargin/1.5;
+  }
+}
+
+.hentry footer {
+    border-top: @border;
+    padding-top: @basemargin / 2;
+    padding-bottom: @basemargin / 2;
+}
+
+
+
+

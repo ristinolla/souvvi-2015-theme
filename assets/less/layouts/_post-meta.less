@@ -1,0 +1,63 @@
+.author-avatar, .avatar {
+  &.lg {
+    img {
+      height: 54px;
+      width: 54px;
+    }
+  }
+  a {
+    display: inline-block;
+  }
+
+  img, img& {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    border: 1px solid #EAEAEA;
+    margin-right: 10px;
+  }
+  &.avatar-64 {
+    height: 64px;
+    width: 64px;
+  }
+
+}
+
+
+
+
+
+.meta-top {
+  font-size: 0.9em;
+  padding: 10px 0;
+
+  .categories {
+    float: right;
+  }
+}
+
+.social-media {
+  span {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 4px 8px;
+    display: inline-block;
+    max-width: 0px;
+    overflow: hidden;
+    .transition( all  0.3s linear );
+  }
+  &:hover {
+    span {
+      max-width: 100px;
+    }
+  }
+
+}
+
+.meta-bottom {
+  .categories {
+    font-size: 0.9em;
+  }
+
+}

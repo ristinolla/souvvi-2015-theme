@@ -1,0 +1,64 @@
+// COMMENTS
+// ========
+
+.comments-wrapper {
+  text-align: center;
+  .content();
+
+  > div {
+    .transition( all  0.3s );
+    text-align: left;
+    max-height: 2800px;
+    overflow: hidden;
+    opacity: 1;
+    //border-bottom: @border;
+    //padding-bottom: @basemargin;
+
+    &.closed {
+      opacity: 0;
+      max-height: 0;
+    }
+  }
+
+
+}
+
+.comments {
+  li {
+    margin-bottom: @basemargin;
+  }
+  .media-object {
+    margin-right: @basemargin/2;
+  }
+
+  .media-body {
+
+  }
+
+  h4 {
+    //color: darken(@fontColor, 10%);
+    font-weight: @boldWeight;
+    text-transform: capitalize;
+  }
+
+  time, time a {
+    color: @muted;
+
+  }
+
+  .comment footer {
+
+  }
+  .alert {
+    margin: 20px 0;
+  }
+}
+
+.respond {
+  label {
+    display: none;
+  }
+  max-width: 600px;
+  margin: auto auto;
+
+}
