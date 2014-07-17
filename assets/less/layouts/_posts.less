@@ -1,5 +1,7 @@
 .hentry {
   margin-bottom: @basemargin*1.5;
+  float: left;
+  width: 100%;
 
   .entry-content p {
     font-size: 1em;
@@ -7,6 +9,7 @@
     margin: @basemargin 0;
 
     text-align: justify;
+    overflow-x: hidden;
   }
 
 
@@ -34,7 +37,7 @@
   }
 
   figure, .wp-caption {
-    margin: 0;
+    margin: @basemargin 0;
     > a, > img {
       display: block;
       .centered();

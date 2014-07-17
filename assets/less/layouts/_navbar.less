@@ -58,6 +58,8 @@
     margin-right: 10px;
     border: none;
   }
+
+
 }
 
 
@@ -124,6 +126,7 @@
 .brand-logo {
   background-image: url("@{imgurl}souvvi_logo.png");
   background-position: center center;
+  background-size: contain;
   background-repeat: no-repeat;
   margin-left: 15px;
   margin-right: 15px;
@@ -140,5 +143,17 @@
 .navbar-fixed-top {
   width: 100%;
   margin: 0;
+}
+
+.menu-home a {
+  .home & {
+    display: none;
+  }
+  &:extend(.hidden-xs all);
+  &:extend(.brand-logo all);
+  .text-hide();
+  &:hover {
+    background-color: transparent !important;
+  }
 }
 
