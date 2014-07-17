@@ -8,6 +8,24 @@ function roots_excerpt_more($more) {
 //add_filter('excerpt_more', 'roots_excerpt_more');
 
 /**
+ * Custom excerpt
+ *
+ *
+ */
+
+function xo_excerpt_length( $length ) {
+  return 12;
+}
+add_filter( 'excerpt_length', 'xo_excerpt_length', 999 );
+
+function xo_excerpt_more( $excerpt ) {
+  return '...';
+}
+add_filter( 'excerpt_more', 'xo_excerpt_more' );
+
+
+
+/**
  * Manage output of wp_title()
  */
 function roots_wp_title($title) {
@@ -139,4 +157,21 @@ function souvvi_get_photos() {
   if ( ! preg_match_all( '/<img\s[^>]*?src=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
     return false;
   return;
+}
+
+
+
+
+
+/**
+ * Custom imagename. not working
+ *
+ *
+ */
+
+add_filter( 'image_size_names_choose', 'xo_custom_img_sizes' );
+function xo_custom_img_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+        'category-thumb' => __('Category thumbnail', 'roots'),
+    ) );
 }
