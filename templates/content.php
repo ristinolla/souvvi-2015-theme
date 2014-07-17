@@ -12,9 +12,12 @@
 
   </footer>
   <div class="centered comments-wrapper">
-    <button type="button" data="comments-toggle" class="button button-simple button-sm">Show Comments (1)</button>
+    <button data-url="<?php the_permalink(); ?>&ajax=1" type="button" class="button button-simple button-sm show-comments-btn">
+      <?php
+      echo sprintf(__('Show Comments (%d)', 'roots'), get_comments_number());
+      ?>
+    </button>
     <div class="comments-drawer closed">
-      <?php comments_template('/templates/comments.php'); ?>
     </div>
   </div>
 </article>

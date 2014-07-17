@@ -1,16 +1,10 @@
 <div class="meta-bottom muted">
-  <ul class="list-inline categories hidden-xs hidden-sm muted pull-right">
-    <li><a href="#">#Category</a></li>
-    <li><a href="#">#Category</a></li>
-    <li><a href="#">#Category</a></li>
-    <li><a href="#">#Category</a></li>
-    <li><a href="#">#Category</a></li>
-    <li><a href="#">#tag</a></li>
-    <li><a href="#">#tag</a></li>
-    <li><a href="#">#tag</a></li>
-    <li><a href="#">#tag</a></li>
-    <li><a href="#">#tag</a></li>
-  </ul>
+  <?php echo get_the_category_list(); ?>
+  <?php
+   if(get_the_tag_list()) {
+       echo get_the_tag_list('<ul class="post-tags"><li>','</li><li>','</li></ul>');
+   }
+   ?>
 </div>
 <div class="social-media muted">
   <ul class="list-inline">

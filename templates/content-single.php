@@ -13,7 +13,7 @@
 
     </footer>
     <div class="centered comments-wrapper">
-      <div class="comments-drawer">
+      <div id="comments-drwawer" class="comments-drawer">
         <?php comments_template('/templates/comments.php'); ?>
       </div>
     </div>
