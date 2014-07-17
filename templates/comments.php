@@ -44,7 +44,7 @@
     <?php if (get_option('comment_registration') && !is_user_logged_in()) : ?>
       <p><?php printf(__('You must be <a href="%s">logged in</a> to post a comment.', 'roots'), wp_login_url(get_permalink())); ?></p>
     <?php else : ?>
-      <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+      <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform-<?php echo get_the_ID(); ?>" data-id="<?php echo get_the_ID(); ?>" class="commentform">
         <?php if (is_user_logged_in()) : ?>
           <p>
             <?php printf(__('Logged in as <a href="%s/wp-admin/profile.php">%s</a>.', 'roots'), get_option('siteurl'), $user_identity); ?>
@@ -53,22 +53,25 @@
         <?php else : ?>
           <div class="form-group">
             <label for="author"><?php _e('Name', 'roots'); if ($req) _e(' (required)', 'roots'); ?></label>
-            <input type="text" placeholder="<?php _e('Name', 'roots'); if ($req) _e(' (required)', 'roots'); ?>" class="form-control" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
+            <p class="form-guide"><?php _e("Please insert your name", "roots"); ?></p>
+            <input type="text" placeholder="<?php _e('Name', 'roots'); if ($req) _e(' (required)', 'roots'); ?>" class="form-control" name="author" value="<?php echo esc_attr($comment_author); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
           </div>
           <div class="form-group">
             <label for="email"><?php _e('Email (will not be published)', 'roots'); if ($req) _e(' (required)', 'roots'); ?></label>
-            <input type="email" placeholder="<?php _e('Email (will not be published)', 'roots'); if ($req) _e(' (required)', 'roots'); ?>" class="form-control" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
+            <p class="form-guide"><?php _e("Please check your email. It won't be published, but is required.", "roots"); ?></p>
+            <input type="email" placeholder="<?php _e('Email (will not be published)', 'roots'); if ($req) _e(' (required)', 'roots'); ?>" class="form-control" name="email" value="<?php echo esc_attr($comment_author_email); ?>" size="22" <?php if ($req) echo 'aria-required="true"'; ?>>
           </div>
           <div class="form-group">
             <label for="url"><?php _e('Website', 'roots'); ?></label>
-            <input type="url" placeholder="<?php _e('Website', 'roots'); ?>" class="form-control" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" size="22">
+            <input type="url" placeholder="<?php _e('Website', 'roots'); ?>" class="form-control" name="url"  value="<?php echo esc_attr($comment_author_url); ?>" size="22">
           </div>
         <?php endif; ?>
         <div class="form-group">
           <label for="comment"><?php _e('Comment', 'roots'); ?></label>
-          <textarea name="comment" placeholder="<?php _e('Comment', 'roots'); ?>" id="comment" class="form-control" rows="5" aria-required="true"></textarea>
+          <p class="form-guide"><?php _e("Uuups, you tried to send an empty message. Plase write something.", "roots"); ?></p>
+          <textarea name="comment" placeholder="<?php _e('Comment', 'roots'); ?>" id="comment-<?php echo get_the_ID(); ?>" class="form-control" rows="5" aria-required="true"></textarea>
         </div>
-        <button name="submit" class="button button-submit" type="submit" id="submit"><?php _e('Submit Comment', 'roots'); ?></button>
+        <button name="submit" class="button button-submit" type="submit" id="submit-<?php echo get_the_ID(); ?>"><?php _e('Submit Comment', 'roots'); ?></button>
         <?php comment_id_fields(); ?>
         <?php do_action('comment_form', $post->ID); ?>
       </form>

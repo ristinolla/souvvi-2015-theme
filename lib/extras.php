@@ -5,7 +5,7 @@
 function roots_excerpt_more($more) {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'roots') . '</a>';
 }
-add_filter('excerpt_more', 'roots_excerpt_more');
+//add_filter('excerpt_more', 'roots_excerpt_more');
 
 /**
  * Manage output of wp_title()
@@ -72,3 +72,71 @@ function roots_caption($output, $attr, $content) {
   return $output;
 }
 add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
+
+
+
+/**
+ * Checks if ajax comments and then serve the comments accordingly
+ *
+ *
+ *
+ */
+
+function get_ajax_comments($url) {
+
+  while (have_posts()) : the_post();
+    comments_template('/templates/comments.php');
+  endwhile;
+}
+
+// Method to handle comment submission
+function ajaxComment($comment_ID, $comment_status) {
+  // If it's an AJAX-submitted comment
+  if(isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+
+
+    // Kill the script, returning the comment HTML
+    switch( $comment_status ) {
+      case '0':
+          //notify moderator of unapproved comment
+          $status = array('status' => "moderate");
+
+          wp_notify_moderator( $comment_ID );
+          break;
+      case '1': //Approved comment
+          $status = array('status' => "success");
+
+          wp_notify_postauthor( $comment_ID );
+          break;
+      default:
+          $status = array('status' => "error");
+
+    }
+    echo json_encode($status);
+
+    exit;
+  }
+}
+
+// Send all comment submissions through my "ajaxComment" method
+add_action('comment_post', 'ajaxComment', 20, 2);
+
+
+
+/**
+ * Grabs the image
+ *
+ *
+ */
+
+function souvvi_img_grabber() {
+  if ( ! preg_match( '/<img\s[^>]*?src=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+    return false;
+  return esc_url_raw( $matches[1] );
+}
+
+function souvvi_get_photos() {
+  if ( ! preg_match_all( '/<img\s[^>]*?src=[\'"](.+?)[\'"]/is', get_the_content(), $matches ) )
+    return false;
+  return;
+}

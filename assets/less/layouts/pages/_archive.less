@@ -1,0 +1,98 @@
+// Archive.less
+//=============
+
+.post-tiles {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  float: left;
+}
+
+.post-tile {
+  display: inline-block;
+  width: 100%/2;
+  @media (min-width: @sm) {
+    width: 100%/3;
+  }
+  @media (min-width: @md) {
+    width: 100%/3;
+  }
+  @media (min-width: @lg) {
+    width: 100%/4;
+  }
+
+  height: 300px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  padding: 5px;
+
+  > a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-decoration: none;
+    overflow: hidden;
+    > div.header{
+      position: absolute;
+      z-index: 200;
+      bottom: 10%;
+      width: 100%;
+      opacity: 0;
+      padding: 10px;
+      color: @fontColor;
+      .transition( all 0.3s ease-in-out );
+      background: rgba(255, 255, 255, 0.8);
+      .lh-transform(translateX(-100%));
+    }
+
+
+    &:hover, .no-touch & {
+      > div {
+
+        opacity: 1;
+        .lh-transform(translateX(0));
+      }
+    }
+
+  }
+  p {
+    @media (max-width: @sm) {
+      display: none;
+    }
+    line-height: 1.2;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  h3 {
+    font-size: 1em;
+    letter-spacing: -0.5px;
+    //background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    //bottom: 0;
+    //position: absolute;
+    width: 100%;
+    z-index: 200;
+    margin: 0;
+    padding: 0;
+    color: @brand;
+
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .author-avatar {
+
+  }
+  .author-name {
+    font-size: 0.9em;
+  }
+}
