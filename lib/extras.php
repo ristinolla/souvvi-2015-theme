@@ -160,6 +160,13 @@ function souvvi_get_photos() {
 }
 
 
+function xo_img_src_grab($data) {
+  if ( ! preg_match( '/<img\s[^>]*?src=[\'"](.+?)[\'"]/is', $data, $matches ) )
+    return false;
+  return esc_url_raw( $matches[1] );
+}
+
+
 
 
 
@@ -175,3 +182,20 @@ function xo_custom_img_sizes( $sizes ) {
         'category-thumb' => __('Category thumbnail', 'roots'),
     ) );
 }
+
+function xo_featured_image($postID, $size)
+{
+  # code...
+  $img_arr = wp_get_attachment_image_src( get_post_thumbnail_id($postID), 'large');
+  $default_url = get_template_directory() . '/assets/img/placeholder.png';
+
+  $img_src = ($img_arr) ? $img_arr[0] : $default_url ;
+
+  return $img_src;
+}
+
+
+
+
+
+

@@ -25,10 +25,11 @@
           wp_nav_menu(array('theme_location' => 'primary_navigation', 'menu_class' => 'nav navbar-nav'));
         endif;
       ?>
-      <ul class="nav navbar-nav navbar-right mobile-inline">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-      </ul>
+
+      <?php
+        if (has_nav_menu('some_nav')) :
+          wp_nav_menu(array('theme_location' => 'some_nav', 'menu_class' => 'nav navbar-nav navbar-right mobile-inline'));
+        endif;
+      ?>
     </nav>
 </header>

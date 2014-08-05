@@ -19,7 +19,15 @@ function roots_setup() {
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
-  add_image_size( 'category-thumb', 500, 300, array(500, 500) );
+  if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 500, 500, true);
+  }
+
+  add_image_size( 'category-thumb', 500, 100, false);
+
+
+
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
@@ -29,6 +37,8 @@ function roots_setup() {
   add_editor_style('/assets/css/editor-style.css');
 }
 add_action('after_setup_theme', 'roots_setup');
+
+
 
 
 /**
