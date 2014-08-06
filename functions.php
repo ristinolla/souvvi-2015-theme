@@ -23,6 +23,7 @@ $roots_includes = array(
   'lib/author.php',          // Custom author related functions
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
+  'lib/shortcodes.php',      // Short codes
 );
 
 foreach ($roots_includes as $file) {

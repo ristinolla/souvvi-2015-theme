@@ -13,28 +13,38 @@ else:
         <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'roots'); ?>
       </div>
     <![endif]-->
+        <?php
+          do_action('get_header');
+          get_template_part('templates/header');
+        ?>
 
-    <?php
-      do_action('get_header');
-      get_template_part('templates/header');
-    ?>
 
-    <div class="wrap clearfix" role="document">
+    <div class="container clearfix" role="document">
+
+
+
+
+
       <?php if (is_home()): ?>
-        <div>
-          <main class="main" role="main">
+          <section class="row">
+            <div class="col-xs-12 text-center banner hidden-xs hidden-sm">
+              <img src="<?php header_image(); ?>" alt="Souvvi Logo" />
+            </div>
+          </section>
+          <div class="row">
+            <main class="main" role="main">
       <?php else: ?>
-        <div class="row">
-          <main class="main <?php echo roots_main_class(); ?>" role="main">
+          <div class="row">
+            <main class="main <?php echo roots_main_class(); ?>" role="main">
       <?php endif; ?>
 
-            <?php include roots_template_path(); ?>
-          </main><!-- /.main -->
-      </div><!-- /.content -->
-    </div><!-- /.wrap -->
+          <?php include roots_template_path(); ?>
 
-    <?php get_template_part('templates/footer'); ?>
-
+            </main>
+        </div>
+        <?php get_template_part('templates/footer'); ?>
+    </div>
+    <?php wp_footer(); ?>
   </body>
   </html>
 <?php endif; ?>

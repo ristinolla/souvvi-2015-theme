@@ -26,7 +26,16 @@ function roots_setup() {
 
   add_image_size( 'category-thumb', 500, 100, false);
 
+  $args = array(
+    'flex-width'    => true,
+    'width'         => 1400,
+    'flex-height'   => true,
+    'height'        => 500,
+    'default-image' => get_template_directory_uri() . '/assets/img/header.jpg',
+  );
+  add_theme_support( 'custom-header', $args );
 
+  add_theme_support( 'html5', array( 'search-form', 'gallery') );
 
 
   // Add post formats

@@ -1,5 +1,25 @@
+body {
+  background-color: @bodybg;
+}
+
 // Content wrapper
-.wrap { }
+.container {
+  background-color: @containerbg;
+  position: relative;
+}
 
 // Main content area
-.main { }
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: @navbar-height;
+  .home &,
+  .page-template-template-about-php & {
+    margin-top: 0;
+  }
+
+}
+
+.banner {
+  //margin-top: @navbar-height;
+}

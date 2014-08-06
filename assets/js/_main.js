@@ -23,6 +23,28 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+      /******** Navigation hide NAVIGATION *********/
+      var lastScrollTop = 0;
+      $(window).scroll(function(event){
+         var st = $(this).scrollTop();
+
+         if(st > 80) {
+
+           if (st > lastScrollTop){
+               $('#main-header').addClass('up').removeClass('down');
+           } else {
+               $('#main-header').addClass('down').removeClass('up');
+           }
+        lastScrollTop = st;
+        } else {
+          if(!$('#main-header').hasClass('down')){
+            $('#main-header').addClass('down').removeClass('up');
+          }
+        }
+      });
+
+
+
     }
   },
   // Home page
