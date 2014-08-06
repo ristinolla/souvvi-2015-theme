@@ -22,7 +22,7 @@ Template Name: Profile Page
 
 
 
-    <div class="content container">
+    <div class="content">
       <?php get_template_part('templates/content', 'profile'); ?>
     </div>
 <?php endwhile; ?>

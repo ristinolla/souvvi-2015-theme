@@ -1,6 +1,6 @@
 /* ========================================================================
  * Follower
- * 
+ *
  * ========================================================================
  * Copyright 2014 Perttu Ristimella
  * Licensed under MIT
@@ -22,15 +22,40 @@
 
   Follower.prototype.checkPosition = function() {
     var top = this.$window.scrollTop(),
-        position = this.options.offset + this.$element.context.offsetTop;
-    
-    console.log( "position: ", position, "top: ", this.$window.scrollTop() );
-    
-    if (top >= position) {
-        this.$element.addClass('navbar-fixed-top');
+        position = this.options.offset + this.$element.context.offsetTop,
+        offsetTop = this.$element.context.offsetTop;
+
+    if(!this.$element.context.lastScrollTop) {
+      var lastScrollTop = 0;
     } else {
-        this.$element.removeClass('navbar-fixed-top');
+      var lastScrollTop = this.$element.context.lastScrollTop;
     }
+    //console.log( "position: ", position, "top: ", this.$window.scrollTop() );
+    /*
+    if (top >= position) {
+        this.$element.removeClass('down');
+    } else {
+        this.$element.addClass('down');
+    }
+    */
+      //console.log( "lastScrollTop: ", lastScrollTop, "top: ", top );
+
+     if(top > offsetTop) {
+
+       if (top > lastScrollTop){
+           this.$element.addClass('up').removeClass('down');
+       } else {
+           this.$element.addClass('down').removeClass('up');
+       }
+
+    } else {
+      if(!this.$element.hasClass('down')){
+        this.$element.addClass('down').removeClass('up');
+      }
+    }
+
+    this.$element.context.lastScrollTop = top;
+
 
   };
 
@@ -67,6 +92,7 @@
       var data = $this.data();
       data.position = $this.scrollTop();
       data.offset = data.offset || {};
+      data.lastScrollTop = 0;
       $this.follower(data);
     });
   });

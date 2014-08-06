@@ -6,7 +6,8 @@
   .entry-content p {
     font-size: 1em;
     line-height: 1.8em;
-    margin: @basemargin 0;
+    margin-top: @basemargin;
+    margin-bottom: @basemargin;
 
     text-align: justify;
     overflow-x: hidden;
@@ -16,7 +17,14 @@
 
 
 
-  > header, .entry-content p, > footer {
+  > header,
+  .entry-content > p,
+  .entry-content > div,
+  .entry-content > ul,
+  .entry-content > ol,
+  .entry-content > dl,
+  .entry-content > table,
+  > footer {
     .centered();
     .content();
   }
@@ -40,8 +48,9 @@
 
   figure, .wp-caption {
     float: none;
+    margin-top: @basemargin;
+    margin-bottom: @basemargin;
 
-    margin: @basemargin 0;
     > a, > img {
       display: block;
       .centered();
@@ -63,6 +72,29 @@
     background: @miscBg;
     padding: @basemargin/4 @basemargin/1.5;
   }
+
+
+  section.half {
+     margin-bottom: @basemargin/2;
+  }
+
+  @media (min-width: @sm) {
+    section.half {
+      margin-bottom: 0;
+      padding-right: @basemargin/2;
+
+    }
+    section.half + section.half {
+      padding-right: 0;
+      padding-left: @basemargin/2;
+    }
+
+  }
+  section + p {
+    margin: 0;
+  }
+
+
 }
 
 .hentry footer {

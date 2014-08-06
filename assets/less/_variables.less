@@ -8,6 +8,10 @@
 @darkGray: #555;
 @lightGray: #eee;
 
+@containerbg: white;
+
+@bodybg: #fbfafc;
+
 // Glyphicons path
 // -------------------------
 
@@ -17,7 +21,7 @@
 // Typography
 // -------------------------
 
-@sans-serif: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@sans-serif: "proxima nova","Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 @boldWeight: 600;
 @lightWeight: 200;
 @baseFontSize: 18px;
@@ -46,14 +50,19 @@
 
 @content-width: 1000px;
 
+@screen-lg: 1400px;
 
-@container-lg: (@content-width + @grid-gutter-width);
+@grid-gutter-width: 0;
+@container-lg: (1400px + @grid-gutter-width);
+@container-md: 100%;
+@container-sm: 100%;
+@container-xs: 100%;
 @content-lg: @content-width;
 @content-md: 940px;
 @content-sm: 100%;
 @content-xs: 100%;
 
-@lg: 1200px;
+@lg: @screen-lg;
 @md: 992px;
 @sm: 768px;
 @xs: 480px;
