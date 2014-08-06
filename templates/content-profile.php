@@ -1,11 +1,4 @@
-<div style="background-image: url(assets/img/test/test5.jpg);"
-  data-spy="pr-herounit"
-  data-hero-max="600"
-  data-hero-treshold="80"
-  class="hero hero-huge">
-</div>
 
-<div class="content container">
   <div class="row">
     <div class="col-xs-12 col-sm-5 col-md-4">
 
@@ -34,4 +27,5 @@
         <?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
     </div>
   </div>
-</div>
+
+

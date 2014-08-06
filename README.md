@@ -2,4 +2,3 @@
 
 Based on [Roots Starter Theme](http://roots.io/)
 
-toka vika
