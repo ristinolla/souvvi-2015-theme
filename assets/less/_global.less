@@ -45,10 +45,6 @@ body {
 .content {
   padding-left: @basemargin/2;
   padding-right: @basemargin/2;
-  @media (min-width: @md ){
-    padding-left: 0px;
-    padding-right: 0px;
-  }
 }
 
 .padded {
@@ -69,3 +65,12 @@ body {
   color: white;
 }
 
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
+}

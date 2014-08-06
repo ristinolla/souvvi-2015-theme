@@ -113,4 +113,71 @@ function user_meta_list($user_id, $args)
 
 
 
+/**
+
+  User last posts
+
+**/
+
+function pr_user_newest_posts($args)
+{
+
+  wp_reset_postdata();
+  $defaults = array(
+    'post_type' => "post",
+    'length' => 4,
+    'order' => 'DESC',
+    'before_item' => '<li>',
+    'after_item' => '</li>',
+    'before_list' => '<ul>',
+    'after_before' => '</ul>',
+    'date_format' => 'j.m.Y',
+    'category_name' => "",
+    'posts_per_page' => 4,
+    'author' => 1
+  );
+
+  // todo, mahollisuus listata myös pr_eventtejä nopsaa desc
+  $args = wp_parse_args($args, $defaults);
+  extract( $args, EXTR_SKIP );
+
+
+
+  $queryargs = array(
+    'post_type' => $post_type,
+    'posts_per_page' => $length,
+    'order' => $order,
+    'category_name' => $category_name,
+    'author' => $author
+  );
+
+
+  //echo var_dump($queryargs);
+  $event_query = new WP_Query( $queryargs );
+
+  //loop
+  if ( $event_query -> have_posts() ):
+
+    if( isset( $before_list )) {
+      echo $before_list;
+    }
+
+    while ( $event_query->have_posts() ) :
+      $event_query->the_post();
+      get_template_part('templates/content', 'archive');
+    endwhile;
+
+    if( isset( $after_list )){
+      echo $after_list;
+    }
+
+  endif;
+
+  //
+  wp_reset_postdata();
+
+
+}
+
+
 ?>
