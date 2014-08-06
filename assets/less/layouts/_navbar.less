@@ -5,6 +5,12 @@
 .navbar {
   border-bottom: 0;
   background: rgba(255,255,255,0.9);
+
+  z-index: 1000;
+  width: 100%;
+  top: 0;
+
+
   .centered();
 
   @media (min-width: @sm) {
@@ -57,6 +63,24 @@
   .navbar-toggle {
     margin-right: 10px;
     border: none;
+  }
+
+
+  .box-shadow(0 0 10px rgba(0,0,0,0.10));
+
+  &.down {
+    opacity: 1;
+    .translate(0,0);
+    .transition-transform(.2s);
+    .transition(color .3s);
+    .transition(opacity .3s);
+  }
+  &.up {
+    opacity: 0;
+    .translate(0,-60);
+    .transition-transform(.2s);
+    .transition(color .3s);
+    .transition(opacity .3s);
   }
 
 
@@ -150,7 +174,7 @@
 
 .menu-home a {
   .home & {
-    display: none;
+    //display: none;
   }
   &:extend(.hidden-xs all);
   &:extend(.brand-logo all);

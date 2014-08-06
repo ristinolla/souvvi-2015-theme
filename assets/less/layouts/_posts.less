@@ -10,6 +10,8 @@
 
     text-align: justify;
     overflow-x: hidden;
+
+
   }
 
 
@@ -37,6 +39,8 @@
   }
 
   figure, .wp-caption {
+    float: none;
+
     margin: @basemargin 0;
     > a, > img {
       display: block;
@@ -65,6 +69,8 @@
     border-top: @border;
     padding-top: @basemargin / 2;
     padding-bottom: @basemargin / 2;
+    .clearfix();
+    clear: both;
 }
 
 
