@@ -24,6 +24,7 @@ $roots_includes = array(
   'lib/scripts.php',         // Scripts and stylesheets
   'lib/extras.php',          // Custom functions
   'lib/shortcodes.php',      // Short codes
+  'lib/archive.php',      // Short codes
 );
 
 foreach ($roots_includes as $file) {

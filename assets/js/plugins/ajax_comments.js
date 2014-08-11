@@ -15,7 +15,6 @@
         url =  $this.data('url');
     $this.next('div').load(url, function() {
       $this
-        .attr('disabled', 'disabled')
         .next('div').removeClass('closed');
     });
   });
@@ -78,7 +77,7 @@
   $('.commentform').each(function() {
     var $this = $(this),
         $button = $this.children('button[type="submit"]');
-
+    console.log($this);
 
     $this.on('submit', function(e) {
       e.preventDefault();

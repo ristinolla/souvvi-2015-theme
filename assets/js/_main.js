@@ -23,6 +23,9 @@ var Roots = {
   common: {
     init: function() {
       // JavaScript to be fired on all pages
+
+      $(".entry-content").fitVids();
+
       /******** Navigation hide NAVIGATION *********/
       var lastScrollTop = 0;
       $(window).scroll(function(event){
@@ -41,6 +44,15 @@ var Roots = {
             $('#main-header').addClass('down').removeClass('up');
           }
         }
+      });
+
+
+
+      // ***** MOBILE SEARCH HIDE BUTTON ****//
+
+      $("#main-header").on('click','#search-toggle', function(e){
+        e.preventDefault();
+        $(this).parent().toggleClass('search-mode');
       });
 
 

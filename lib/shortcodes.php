@@ -33,3 +33,21 @@ function half_page_shortcode($atts, $content = null) {
     return '<section class="half col-xs-12 col-sm-6">' . do_shortcode($content) . '</section>';
 }
 add_shortcode('half', 'half_page_shortcode');
+
+
+
+
+
+function author_img_list_shortcode($atts) {
+   extract( shortcode_atts( array(
+      'exclude' => false,
+   ), $atts ) );
+   if (function_exists("xo_user_list")) {
+     return xo_user_list();
+   } else {
+     return "Shortcode not instaled, user_list function not found";
+   }
+}
+add_shortcode('author_img_list', 'author_img_list_shortcode');
+
+

@@ -1,8 +1,7 @@
 <div class="meta-top muted">
   <span class="author-avatar">
     <a  rel="author" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-
-      <img src="assets/img/make_thumb.jpg" alt="Markus" >
+      <img src="<?php echo xo_user_avatar_url(get_the_author_meta('ID'), 'thumbnail'); ?>" alt="Markus" >
     </a>
   </span>
   <span class="byline author vcard">
