@@ -9,17 +9,33 @@ Template Name: Profile Page
 <?php while (have_posts()) : the_post(); ?>
 
     <?php
-         $heros = get_post_custom_values('hero_img_url', get_the_ID());
-         $hero_img_url = $heros[0];
-    ?>
 
-    <div style="background-image: url(<?php echo $hero_img_url; ?> );"
+        if(has_post_thumbnail()){
+          $hero_id = get_post_thumbnail_id( get_the_author_meta('ID'));
+
+          $hero_img_url = wp_get_attachment_image_src( $hero_id, array('1500, 500') );
+        } else {
+          $hero_img_url = get_template_directory_uri() . '/assets/img/header.jpg';
+        }
+
+
+    /*
+
+    <div style="background-image: url(<?php echo esc_url( $hero_img_url) ; ?> );"
       data-spy="pr-herounit"
       data-hero-max="600"
       data-hero-treshold="80"
       class="hero hero-huge">
     </div>
+    */
 
+?>
+
+      <?php if(has_post_thumbnail()): ?>
+        <div class="hero-image">
+        <?php the_post_thumbnail( "large"); ?>
+        </div>
+      <?php endif; ?>
 
 
     <div class="content">
@@ -34,7 +50,7 @@ Template Name: Profile Page
       $args = array(
           'length' => 4,
           'author' => get_the_author_meta('ID'),
-          'before_list' => '<ul class="post-tiles">'
+          'before_list' => '<ul class="post-tiles post-four">'
       );
 
       pr_user_newest_posts($args);

@@ -19,10 +19,10 @@ define('GOOGLE_ANALYTICS_ID', 'UA-26185197-1'); // UA-XXXXX-Y (Note: Universal A
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'col-xs-12 col-sm-7 col-md-8 page-content';
+    $class = 'col-xs-12 page-content';
   } else {
     // Classes on full width pages
-    $class = 'col-sm-12';
+    $class = 'col-sm-12 page-content';
   }
 
   return apply_filters('roots/main_class', $class);
@@ -32,7 +32,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return apply_filters('roots/sidebar_class', 'col-xs-12 col-sm-5 col-md-4');
+  return apply_filters('roots/sidebar_class', 'col-xs-12');
 }
 
 /**
@@ -57,7 +57,8 @@ function roots_display_sidebar() {
       'is_front_page',
       'is_single',
       'is_archive',
-      'is_page'
+      'is_page',
+      'is_search'
     ),
     /**
      * Page template checks (via is_page_template())

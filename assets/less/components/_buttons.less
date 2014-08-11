@@ -2,6 +2,15 @@
 // =======
 // Credit: http://tympanus.net/Development/CreativeButtons/
 
+.button-bare {
+  border: none;
+  background: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: none;
+  &:focus {
+    outline: 1px solid rgba(0, 0, 0, 0);
+  }
+}
 
 .perspective {
   .lh-perspective(800);
