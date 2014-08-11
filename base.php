@@ -15,22 +15,27 @@ else:
     <![endif]-->
         <?php
           do_action('get_header');
-          get_template_part('templates/header');
+
         ?>
+
+    <?php if (is_home()): ?>
+    <div class="container clearfix">
+
+        <section class="row">
+          <div class="col-xs-12 text-center banner hidden-xs hidden-sm">
+            <img src="<?php header_image(); ?>" alt="Souvvi Logo" />
+          </div>
+        </section>
+    </div>
+    <?php endif; ?>
+
+
+    <?php get_template_part('templates/header'); ?>
 
 
     <div class="container clearfix" role="document">
 
-
-
-
-
       <?php if (is_home()): ?>
-          <section class="row">
-            <div class="col-xs-12 text-center banner hidden-xs hidden-sm">
-              <img src="<?php header_image(); ?>" alt="Souvvi Logo" />
-            </div>
-          </section>
           <div class="row">
             <main class="main" role="main">
       <?php else: ?>

@@ -19,6 +19,7 @@ function modify_contact_methods($profile_fields) {
   $profile_fields['extra_url_title']  = __('Additional URL Title (optional)','xo');
   $profile_fields['vimeo']            = __('Vimeo username'   ,'xo');
   $profile_fields['youtube']          = __('Youtube username' ,'xo');
+  $profile_fields['avatar_url']          = __('Avatar url (Use medium size)' ,'xo');
   // Remove old fields
 
   unset($profile_fields['aim']);
@@ -96,7 +97,7 @@ function user_meta_list($user_id, $args)
       echo $before_item;
       printf('<a href="%2$s" title="%3$s">' . $linktext . '</a>',
               $service,                                   //twitter
-              $urls[$service] . '' . $user_metas[$service][0],   //username
+              esc_url($urls[$service] . '' . $user_metas[$service][0]),   //username
               $user_metas['first_name'][0]             //authorname
             );
       echo $after_item;
@@ -179,5 +180,49 @@ function pr_user_newest_posts($args)
 
 }
 
+function xo_user_avatar_url($user_id, $size){
+  $jou = get_user_meta($user_id);
+  $img_url = wp_get_attachment_image_src( $jou['avatar_url'][0], $size, false )[0];
+
+  return esc_url($img_url);
+}
+
+
+
+
+/**
+
+  USER LIST
+
+**/
+
+function xo_user_list()
+{
+  # code...
+  $args = array(
+    'blog_id'      => 1,
+    'meta_key'     => 'avatar_url',
+    'orderby'      => 'nicename',
+    'order'        => 'ASC'
+   );
+  echo '<div><ul class="list-inline">';
+
+  $blogusers = get_users($args);
+  // Array of WP_User objects.
+  foreach ( $blogusers as $user ) {
+
+    ?>
+    <li class="biophoto">
+      <a href="<?php echo $user->user_url; ?>">
+        <img class="img-circle" src="<?php echo xo_user_avatar_url($user->ID, 'thumbnail'); ?>" alt="">
+        <h3 class="text-center"><?php echo $user->first_name; ?> </h3>
+      </a>
+    </li>
+   <?
+  }
+
+  echo "</ul></div>";
+
+}
 
 ?>

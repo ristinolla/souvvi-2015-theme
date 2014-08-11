@@ -12,7 +12,7 @@
 
   </footer>
   <div class="centered comments-wrapper">
-    <button data-url="<?php the_permalink(); ?>&ajax=1" type="button" class="button button-simple button-sm show-comments-btn">
+    <button data-url="<?php the_permalink(); ?>?ajax=1" type="button" class="button button-simple button-sm show-comments-btn">
       <?php
       echo sprintf(__('Show Comments (%d)', 'roots'), get_comments_number());
       ?>

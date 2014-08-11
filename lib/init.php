@@ -11,7 +11,8 @@ function roots_setup() {
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus(array(
     'primary_navigation' => __('Primary Navigation', 'roots'),
-    'some_nav' => __('Social media nav', 'roots')
+    'some_nav' => __('Social media nav', 'roots'),
+    'footer_menu' => __('Footer Menu', 'roots')
   ));
 
   // Add post thumbnails

@@ -9,6 +9,8 @@
   float: left;
 }
 
+
+
 .post-tile {
   display: inline-block;
   width: 100%/2;
@@ -38,6 +40,10 @@
 
     text-decoration: none;
     overflow: hidden;
+
+
+  //** ANIMATED VERSION
+  /*
     > div.header{
       position: absolute;
       z-index: 200;
@@ -59,6 +65,7 @@
         .lh-transform(translateX(0));
       }
     }
+  */
 
   }
   p {
@@ -95,4 +102,28 @@
   .author-name {
     font-size: 0.9em;
   }
+}
+
+.post-four .post-tile {
+  width: 100%/2;
+  @media (min-width: @sm) {
+    width: 100%/2;
+  }
+  @media (min-width: @md) {
+    width: 100%/4;
+  }
+  @media (min-width: @lg) {
+    width: 100%/4;
+  }
+}
+
+.archive-lists {
+  ul {
+    list-style: none;
+    padding-left: 0px;
+    ul {
+      padding-left: 20px;
+    }
+  }
+
 }

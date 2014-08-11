@@ -2,6 +2,8 @@
 
 
 .site-footer {
+  padding: 20px;
+
   .footer-nav {
     display: inline-block;
     ul { display: inline-block; }
@@ -9,13 +11,57 @@
       line-height: 50px;
     }
   }
+  a {
+    color: @muted;
+  }
+
+  @media (max-width: @md) {
+    > div {
+        text-align: center;
+    }
+  }
 }
 .brand-logo-invert {
   display: inline-block;
-  width: 110px;
-  height: 50px;
-  background-image: url("@{imgurl}souvvi_logo_invert.png");
-  background-position: center center;
-  background-repeat: no-repeat;
-  .text-hide();
+  height: 60px;
+  width: auto;
+  margin-left: 0;
 }
+
+
+.copy {
+  text-align: center;
+  @media (min-width: @md) {
+      text-align: right;
+  }
+}
+
+.footer-menu {
+  text-align: center;
+
+  @media (min-width: @md) {
+    margin-top: 20px;
+    .list-inline();
+    li {
+      margin-right: 0;
+      margin-left: 0;
+      &:before {
+        content: "\00b7";
+        margin-right: 20px;
+        margin-left: 20px;
+        display: inline-block;
+        width: 10px;
+        color: @muted;
+      }
+      &:first-of-type:before {
+        content: "";
+        width: 0;
+        margin: 0;
+      }
+    }
+
+  }
+
+}
+
+
