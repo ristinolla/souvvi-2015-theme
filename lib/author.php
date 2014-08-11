@@ -182,9 +182,9 @@ function pr_user_newest_posts($args)
 
 function xo_user_avatar_url($user_id, $size){
   $jou = get_user_meta($user_id);
-  $img_url = wp_get_attachment_image_src( $jou['avatar_url'][0], $size, false )[0];
+  $img_url = wp_get_attachment_image_src( $jou['avatar_url'][0], $size, false );
 
-  return esc_url($img_url);
+  return esc_url($img_url[0]);
 }
 
 
