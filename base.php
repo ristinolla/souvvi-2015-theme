@@ -37,7 +37,7 @@ else:
 
       <?php if (is_home()): ?>
           <div class="row">
-            <main class="main" role="main">
+            <main id="home-main" class="main" role="main">
       <?php else: ?>
           <div class="row">
             <main class="main <?php echo roots_main_class(); ?>" role="main">

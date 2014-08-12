@@ -45,6 +45,16 @@ function roots_setup() {
 
   // Tell the TinyMCE editor to use a custom stylesheet
   add_editor_style('/assets/css/editor-style.css');
+
+
+  add_theme_support( 'infinite-scroll', array(
+    'type'           => 'scroll',
+    'container'      => '#home-main',
+    'footer'         => false
+  ));
+
+
+
 }
 add_action('after_setup_theme', 'roots_setup');
 
@@ -58,15 +68,6 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Primary', 'roots'),
     'id'            => 'sidebar-primary',
-    'before_widget' => '<section class="widget %1$s %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h3>',
-    'after_title'   => '</h3>',
-  ));
-
-  register_sidebar(array(
-    'name'          => __('Footer', 'roots'),
-    'id'            => 'sidebar-footer',
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3>',

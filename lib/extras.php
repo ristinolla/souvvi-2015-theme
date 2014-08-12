@@ -198,4 +198,3 @@ function xo_featured_image($postID, $size)
 
 
 
-

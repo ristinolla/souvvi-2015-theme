@@ -20,6 +20,7 @@ module.exports = function(grunt) {
     'assets/vendor/bootstrap/js/affix.js',
     'assets/vendor/typehead.js/dist/typehead.bundle.js',
     'assets/vendor/fitvids/jquery.fitvids.js',
+    'assets/vendor/jquery-infininte-scroll/jquery.infinitescroll.js',
     'assets/js/plugins/*.js',
     'assets/js/_*.js'
   ];

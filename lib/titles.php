@@ -2,7 +2,7 @@
 /**
  * Page titles
  */
-function sroots_title() {
+function roots_title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));
@@ -42,7 +42,7 @@ function sroots_title() {
 
 
 // BACKUP
-function roots_title() {
+function lkmroots_title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));

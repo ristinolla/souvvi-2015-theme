@@ -2,7 +2,12 @@
 
 
 .site-footer {
+  position: relative;
   padding: 20px;
+  padding-top: 60px;
+
+
+  text-align: center;
 
   .footer-nav {
     display: inline-block;
@@ -13,14 +18,19 @@
   }
   a {
     color: @muted;
-  }
-
-  @media (max-width: @md) {
-    > div {
-        text-align: center;
+    &:hover {
+      color: @brand;
     }
   }
+  > div {
+    margin-bottom: 20px;
+  }
+  .fa {
+    font-size: 1.5em;
+  }
 }
+
+
 .brand-logo-invert {
   display: inline-block;
   height: 60px;
@@ -31,16 +41,13 @@
 
 .copy {
   text-align: center;
-  @media (min-width: @md) {
-      text-align: right;
-  }
 }
 
 .footer-menu {
+
   text-align: center;
 
   @media (min-width: @md) {
-    margin-top: 20px;
     .list-inline();
     li {
       margin-right: 0;
@@ -60,6 +67,30 @@
       }
     }
 
+  }
+
+
+}
+
+
+a.top-btn {
+  background: @muted;
+  border-radius: 100%;
+  padding: 15px 0;
+  height: 60px;
+  width: 60px;
+  display: block;
+  position: absolute;
+  top: -25px;
+  margin-left: -30px;
+  left: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: @boldWeight;
+  color: white;
+   &:hover {
+    background: @brand;
+    color: white;
   }
 
 }

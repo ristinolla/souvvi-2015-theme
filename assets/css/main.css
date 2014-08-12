@@ -7856,11 +7856,15 @@ a {
   color: #e94e4e;
 }
 a:hover {
-  color: #e32121;
+  color: #e94e4e;
+}
+h1 {
+  font-weight: 600;
+  color: #e94e4e;
 }
 h2 {
   font-family: "proxima nova", "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: 200;
+  font-weight: 600;
   line-height: 1.4;
   font-size: 1.8em;
 }
@@ -8592,7 +8596,10 @@ li.menu-home a:hover {
   background-color: transparent !important;
 }
 .site-footer {
+  position: relative;
   padding: 20px;
+  padding-top: 60px;
+  text-align: center;
 }
 .site-footer .footer-nav {
   display: inline-block;
@@ -8606,10 +8613,14 @@ li.menu-home a:hover {
 .site-footer a {
   color: #9fa6ab;
 }
-@media (max-width: 992px) {
-  .site-footer > div {
-    text-align: center;
-  }
+.site-footer a:hover {
+  color: #e94e4e;
+}
+.site-footer > div {
+  margin-bottom: 20px;
+}
+.site-footer .fa {
+  font-size: 1.5em;
 }
 .brand-logo-invert {
   display: inline-block;
@@ -8620,17 +8631,11 @@ li.menu-home a:hover {
 .copy {
   text-align: center;
 }
-@media (min-width: 992px) {
-  .copy {
-    text-align: right;
-  }
-}
 .footer-menu {
   text-align: center;
 }
 @media (min-width: 992px) {
   .footer-menu {
-    margin-top: 20px;
     padding-left: 0;
     list-style: none;
     margin-left: -5px;
@@ -8658,6 +8663,38 @@ li.menu-home a:hover {
     margin: 0;
   }
 }
+a.top-btn {
+  background: #9fa6ab;
+  border-radius: 100%;
+  padding: 15px 0;
+  height: 60px;
+  width: 60px;
+  display: block;
+  position: absolute;
+  top: -25px;
+  margin-left: -30px;
+  left: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+}
+a.top-btn:hover {
+  background: #e94e4e;
+  color: white;
+}
+/* Hides navigation links and site footer when infinite scroll is active */
+.infinite-scroll #navigation,
+.infinite-scroll.neverending #footer {
+  display: none;
+}
+/* Shows the footer again in case all posts have been loaded */
+.infinity-end.neverending #footer {
+  display: block;
+}
+.home .main {
+  padding-top: 40px;
+}
 .post-tiles {
   margin: 0;
   padding: 0;
@@ -8668,7 +8705,7 @@ li.menu-home a:hover {
 .post-tile {
   display: inline-block;
   width: 50%;
-  height: 300px;
+  height: 400px;
   margin: 0;
   padding: 0;
   float: left;
@@ -8697,31 +8734,9 @@ li.menu-home a:hover {
   background-repeat: no-repeat;
   -webkit-background-size: cover cover;
           background-size: cover;
+  color: #53595e;
   text-decoration: none;
   overflow: hidden;
-  /*
-    > div.header{
-      position: absolute;
-      z-index: 200;
-      bottom: 10%;
-      width: 100%;
-      opacity: 0;
-      padding: 10px;
-      color: @fontColor;
-      .transition( all 0.3s ease-in-out );
-      background: rgba(255, 255, 255, 0.8);
-      .lh-transform(translateX(-100%));
-    }
-
-
-    &:hover {
-      > div {
-
-        opacity: 1;
-        .lh-transform(translateX(0));
-      }
-    }
-  */
 }
 .post-tile p {
   line-height: 1.2;
@@ -8732,6 +8747,15 @@ li.menu-home a:hover {
   .post-tile p {
     display: none;
   }
+}
+.post-tile .post-thumb {
+  height: 300px;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+.post-tile .header {
+  padding: 20px;
 }
 .post-tile h3 {
   font-size: 1em;
@@ -8774,6 +8798,30 @@ li.menu-home a:hover {
 }
 .archive-lists ul ul {
   padding-left: 20px;
+}
+.post-tiles.animated-title > div.header {
+  position: absolute;
+  z-index: 200;
+  bottom: 10%;
+  width: 100%;
+  opacity: 0;
+  padding: 10px;
+  color: #53595e;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+.post-tiles.animated-title:hover > div {
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  transform: translateX(0px);
 }
 .page-content {
   margin-top: 40px;
@@ -9008,7 +9056,7 @@ li.menu-home a:hover {
 .hentry h2 {
   color: #e94e4e;
   border-bottom: 1px solid #eeeeee;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 .hentry > header {
   margin-bottom: 40px;

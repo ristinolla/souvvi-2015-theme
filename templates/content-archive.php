@@ -1,22 +1,22 @@
 <li class="post-tile" >
 
   <a href="<?php echo get_the_permalink(); ?>">
-    <?php
-     if(has_post_thumbnail()){
-       $hero_id = get_post_thumbnail_id( get_the_author_meta('ID'));
-       $hero_img_url = wp_get_attachment_image_src( $post->ID, "medium" );
 
-     } else {
-       $hero_img_url = get_template_directory_uri() . '/assets/img/placeholder.png';
-     }
-     ?>
-    <div class="post-thumb" data="square" style="background-image: url(<?php echo $hero_img_url; ?>);">
-      <?php the_post_thumbnail( array(500, 500) );?>
+    <div class="post-thumb">
+      <?php
+        if(has_post_thumbnail()){
+            the_post_thumbnail( array('999', '300') );
+        } else {
+            echo '<img src="'. get_template_directory_uri() . '/assets/img/placeholder.png' .'" title="placeholder image"/>';
+          }
+
+        ?>
     </div>
     <div class="header">
       <h3><?php the_title(); ?></h3>
-      <span class="author-name"><?php sprintf(__('by %s', 'roots'), get_the_author() ); ?></span>
-      <?php the_excerpt(); ?>
+      <span>by <?php echo get_the_author(); ?></span>
+      <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php printf(__('%s ago', 'roots'), human_time_diff(get_the_time('U'), current_time('timestamp'))); ?></time>
+
     </div>
   </a>
 </li>
