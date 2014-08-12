@@ -1,16 +1,20 @@
 <li class="post-tile" >
 
   <a href="<?php echo get_the_permalink(); ?>">
+     <?php
 
-    <div class="post-thumb">
-      <?php
         if(has_post_thumbnail()){
-            the_post_thumbnail( array('999', '300') );
+          $hero_id = get_post_thumbnail_id();
+          $hero_img_url = wp_get_attachment_image_src( $hero_id,'medium' );
+          $hero_img_url = $hero_img_url[0];
+        } elseif( get_post_custom_values("featured_url")[0] ) {
+           $hero_img_url = get_post_custom_values("featured_url")[0];
         } else {
-            echo '<img src="'. get_template_directory_uri() . '/assets/img/placeholder.png' .'" title="placeholder image"/>';
-          }
+          $hero_img_url = get_template_directory_uri() . '/assets/img/placeholder.png';
+        }
 
         ?>
+    <div class="post-thumb" data="square" style="background-image: url('<?php echo esc_url($hero_img_url); ?>');">
     </div>
     <div class="header">
       <h3><?php the_title(); ?></h3>

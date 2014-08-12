@@ -8751,8 +8751,9 @@ a.top-btn:hover {
 .post-tile .post-thumb {
   height: 300px;
   width: 100%;
-  overflow: hidden;
-  text-align: center;
+  -webkit-background-size: cover cover;
+          background-size: cover;
+  background-position: center center;
 }
 .post-tile .header {
   padding: 20px;
