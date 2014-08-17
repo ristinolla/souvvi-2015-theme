@@ -14,7 +14,7 @@
         <div class="mobile-search-form">
           <?php get_search_form(); ?>
         </div>
-        <a class="navbar-brand text-hide brand-logo" href="<?php echo esc_url(home_url('/')); ?>/"><?php bloginfo('name'); ?></a>
+        <a class="navbar-brand text-hide brand-logo" href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
       </div>
       <nav class="collapse navbar-collapse">
         <?php

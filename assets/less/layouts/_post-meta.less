@@ -30,22 +30,24 @@
 .meta-top {
   font-size: 0.9em;
   padding: 10px 0;
-
+  .post-categories {
+    float: right;
+    .hidden-sm();
+    .hidden-xs();
+  }
 }
 
 
 .post-categories, .post-tags {
   font-size: 0.9em;
   .list-inline();
-  .hidden-xs();
-  .hidden-sm();
-  float: right;
   text-transform: capitalize;
   margin-left: 0;
 }
 
 .social-media {
-  span {
+  display: none;
+  /*span {
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 600;
@@ -59,7 +61,7 @@
     span {
       max-width: 100px;
     }
-  }
+  }*/
 
 }
 

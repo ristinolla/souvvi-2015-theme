@@ -8207,6 +8207,7 @@ a.button-submit.button-error {
   width: 80%;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 80px;
 }
 .search-huge,
 .search-huge .form-control {
@@ -8723,7 +8724,7 @@ a.top-btn:hover {
 }
 @media (min-width: 1400px) {
   .post-tile {
-    width: 25%;
+    width: 33.33333333%;
   }
 }
 .post-tile > a {
@@ -8788,7 +8789,7 @@ a.top-btn:hover {
     width: 25%;
   }
 }
-@media (min-width: 1400px) {
+@media (min-width: 992px) {
   .post-four .post-tile {
     width: 25%;
   }
@@ -9377,13 +9378,25 @@ img.avatar {
   font-size: 0.9em;
   padding: 10px 0;
 }
+.meta-top .post-categories {
+  float: right;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .meta-top .post-categories {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .meta-top .post-categories {
+    display: none !important;
+  }
+}
 .post-categories,
 .post-tags {
   font-size: 0.9em;
   padding-left: 0;
   list-style: none;
   margin-left: -5px;
-  float: right;
   text-transform: capitalize;
   margin-left: 0;
 }
@@ -9393,32 +9406,23 @@ img.avatar {
   padding-left: 5px;
   padding-right: 5px;
 }
-@media (max-width: 767px) {
-  .post-categories,
-  .post-tags {
-    display: none !important;
+.social-media {
+  display: none;
+  /*span {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 4px 8px;
+    display: inline-block;
+    max-width: 0px;
+    overflow: hidden;
+    .transition( all  0.3s linear );
   }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  .post-categories,
-  .post-tags {
-    display: none !important;
-  }
-}
-.social-media span {
-  font-size: 11px;
-  text-transform: uppercase;
-  font-weight: 600;
-  margin: 4px 8px;
-  display: inline-block;
-  max-width: 0px;
-  overflow: hidden;
-  -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-.social-media:hover span {
-  max-width: 100px;
+  &:hover {
+    span {
+      max-width: 100px;
+    }
+  }*/
 }
 .comments-wrapper {
   text-align: center;

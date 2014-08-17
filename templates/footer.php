@@ -1,5 +1,5 @@
 <footer class="row content-info dark-bg site-footer" role="contentinfo">
-    <a href="#top" class="top-btn"><i class="fa fa-2x fa-angle-up"></i></a>
+    <a href="#top"  id="to-top" class="top-btn"><i class="fa fa-2x fa-angle-up"></i></a>
     <div class="col-xs-12">
           <img class="brand-logo brand-logo-invert" src="<?php echo get_template_directory_uri(); ?>/assets/img/souvvi_logo_invert.svg" >
     </div>
@@ -33,3 +33,5 @@
     </div>
 
 </footer>
+
+
