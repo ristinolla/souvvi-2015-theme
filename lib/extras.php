@@ -77,12 +77,12 @@ function roots_caption($output, $attr, $content) {
     return $content;
   }
 
+
   // Set up the attributes for the caption <figure>
   $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
   $attributes .= ' class="wp-caption ' . esc_attr($attr['align']) . '"';
   //$attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
-
-  $output  = '<figure' . $attributes .'>';
+  $output  = '<figure' . $attributes .' >';
   $output .= do_shortcode($content);
   $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
   $output .= '</figure>';
@@ -193,8 +193,5 @@ function xo_featured_image($postID, $size)
 
   return $img_src;
 }
-
-
-
 
 

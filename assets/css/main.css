@@ -9379,6 +9379,7 @@ img.avatar {
   padding: 10px 0;
 }
 .meta-top .post-categories {
+  padding-top: 7px;
   float: right;
 }
 @media (min-width: 768px) and (max-width: 991px) {

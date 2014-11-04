@@ -26,7 +26,7 @@
         date("Y"),
         get_bloginfo( 'name' )
       ); ?>.
-      Wanna use photos non-commercially? Read <a href="#use-photos">this</a>.
+      Want to use photos non-commercially? Read <a href="#use-photos">this</a>.
       Crafted with <i class="fa fa-heart red"></i> by <a href="http://www.pertturistimella.com/">Perttu</a>.
 
       </p>
