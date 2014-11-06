@@ -12,22 +12,19 @@
     text-align: justify;
     overflow-x: hidden;
 
+    padding-left: @basemargin/2;
+    padding-right: @basemargin/2;
+    @media screen and (min-width: @sm ) {
+      padding-left: 0;
+      padding-right: 0;
+    }
 
   }
-
-
-
-  > header,
-  .entry-content > p,
-  .entry-content > div,
-  .entry-content > ul,
-  .entry-content > ol,
-  .entry-content > dl,
-  .entry-content > table,
-  > footer {
+  .entry-content {
     .centered();
-    .content();
   }
+
+
 
   img {
     max-width: 100%;
@@ -106,6 +103,6 @@
     clear: both;
 }
 
-
-
-
+.some-buttons {
+  display:none;
+}
