@@ -2,15 +2,18 @@
   margin-bottom: @basemargin*1.5;
   float: left;
   width: 100%;
+  border-top: @border;
 
-  .entry-content p {
-    font-size: 1em;
-    line-height: 1.8em;
-    margin-top: @basemargin;
-    margin-bottom: @basemargin;
+  &:first-of-type {
+    border-top: none;
+  }
 
-    text-align: justify;
-    overflow-x: hidden;
+  > footer,
+  > .comments-wrapper {
+    max-width: @content-max;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 
     padding-left: @basemargin/2;
     padding-right: @basemargin/2;
@@ -18,11 +21,39 @@
       padding-left: 0;
       padding-right: 0;
     }
+  }
+
+  .entry-content p {
+    font-size: 1em;
+    line-height: 1.8em;
+    margin-top: @basemargin;
+    margin-bottom: @basemargin;
+
+
+    text-align: justify;
+    overflow-x: hidden;
 
   }
-  .entry-content {
-    .centered();
+
+  .entry-content > * {
+    max-width: @content-max;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    padding-left: @basemargin/2;
+    padding-right: @basemargin/2;
+    @media screen and (min-width: @sm ) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
+
+  .entry-content > figure {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
 
 
 
@@ -32,28 +63,25 @@
   }
   h2 {
     color: @brand;
-    border-bottom: @border;
     margin-bottom: 10px;
-
   }
+
   > header {
+    margin-top: @basemargin*2;
     margin-bottom: @basemargin;
-  }
-  > footer {
-
+    text-align: center;
   }
 
   figure, .wp-caption {
     float: none;
     margin-top: @basemargin;
     margin-bottom: @basemargin;
+    margin-left: auto;
+    margin-right: auto;
 
     > a, > img {
       display: block;
-      .centered();
-      &+figcaption {
-        .centered();
-      }
+
 
       &.full-width, &.super {
         width: 100%;
@@ -66,7 +94,9 @@
     }
   }
 
-  figcaption.caption {
+  figcaption.caption,
+  .wp-caption-text,
+  .gallery-caption {
     background: @miscBg;
     padding: @basemargin/4 @basemargin/1.5;
   }
@@ -104,5 +134,10 @@
 }
 
 .some-buttons {
-  display:none;
+  text-align: center;
+}
+
+
+.sticky {
+  background: @lightGray;
 }

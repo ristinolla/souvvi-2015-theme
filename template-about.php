@@ -41,6 +41,7 @@ Template Name: Profile Page
     <div class="content">
       <?php get_template_part('templates/content', 'profile'); ?>
     </div>
+
 <?php endwhile; ?>
 
 
@@ -58,5 +59,4 @@ Template Name: Profile Page
     <div class="text-center padded">
         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="button button-lg"><?php printf(__('See all posts by %1&s', 'roots'), get_the_author_meta('first_name')); ?></a>
     </div>
-
 </div>

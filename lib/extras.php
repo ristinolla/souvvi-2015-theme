@@ -67,7 +67,8 @@ function roots_caption($output, $attr, $content) {
     'id'      => '',
     'align'   => 'alignnone',
     'width'   => '',
-    'caption' => ''
+    'caption' => '',
+    'align'   => 'alignnone'
   );
 
   $attr = shortcode_atts($defaults, $attr);
@@ -82,7 +83,7 @@ function roots_caption($output, $attr, $content) {
   $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
   $attributes .= ' class="wp-caption ' . esc_attr($attr['align']) . '"';
   //$attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
-  $output  = '<figure' . $attributes .' >';
+  $output  = '<figure' . $attributes .' style="max-width: ' . $attr['width']. 'px;">';
   $output .= do_shortcode($content);
   $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
   $output .= '</figure>';
@@ -199,29 +200,9 @@ function xo_featured_image($postID, $size)
  * Facebook head script head scripts
  */
 
-function facebook_head_script(){
+function addthis_scripts(){
   ?>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-  <?php
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-546f51e739399f5b" async="async"></script>
+<?php
 }
-add_action('wp_footer', 'facebook_head_script');
-
-
-/**
- * Twitter head script head scripts
- */
-
-function twitter_head_script(){
-  ?>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-  <?php
-}
-add_action('wp_footer', 'twitter_head_script');
+add_action('wp_head', 'addthis_scripts');

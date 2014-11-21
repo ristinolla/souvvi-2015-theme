@@ -49,10 +49,12 @@ function roots_setup() {
 
   add_theme_support( 'infinite-scroll', array(
     'type'           => 'scroll',
-    'container'      => '#home-main',
-    'footer'         => false
-  ));
-
+    'footer_widgets' => true,
+    'footer'         => 'site-footer',
+    'container'      => 'content',
+    'wrapper'        => false,
+    'posts_per_page' => false
+  ) );
 
 
 }
