@@ -8974,6 +8974,11 @@ a.top-btn:hover {
 .sticky {
   background: #eeeeee;
 }
+.post-nav {
+  max-width: 40em;
+  margin-left: auto;
+  margin-right: auto;
+}
 .author-avatar.lg img,
 .avatar.lg img {
   height: 54px;
@@ -9050,6 +9055,15 @@ img.avatar {
       max-width: 100px;
     }
   }*/
+}
+.post-edit-link {
+  padding: 7px 12px;
+  background: #eeeeee;
+  border-radius: 5px;
+}
+.post-edit-link:hover {
+  background: #555555;
+  color: white;
 }
 .comments-wrapper {
   text-align: center;
