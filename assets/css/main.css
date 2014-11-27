@@ -8791,6 +8791,8 @@ a.top-btn:hover {
 .page-content {
   margin-top: 40px;
   margin-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .page-content > h1,
 .page-content > h2 {
@@ -8834,7 +8836,7 @@ a.top-btn:hover {
 }
 .header-content {
   text-align: center;
-  margin-top: -160px;
+  margin-top: -70px;
 }
 .hentry {
   margin-bottom: 60px;

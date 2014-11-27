@@ -34,12 +34,14 @@ if(has_post_thumbnail()){
 		<?php the_content(); ?>
 		<div class="author-meta">
 			<?php
+			/*
 			$args = array(
 				'ul_class' => 'list-unstyled list-inline',
 				'linktext' => '<i class="fa fa-2x fa-%1$s"></i>',
 				'fa'       => true
 			);
 			user_meta_list($user_id, $args);
+			*/
 			?>
 		</div>
 		<?php wp_link_pages(array('before' => '<nav class="pagination">', 'after' => '</nav>')); ?>
