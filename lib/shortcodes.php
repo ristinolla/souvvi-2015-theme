@@ -34,14 +34,14 @@ function half_page_shortcode($atts, $content = null) {
 }
 add_shortcode('half', 'half_page_shortcode');
 
-function ful_page_shortcode($atts, $content = null) {
+function full_page_shortcode($atts, $content = null) {
    extract( shortcode_atts( array(
       'first' => false,
    ), $atts ) );
 
-    return '<section class="full col-xs-12">' . do_shortcode($content) . '</section>';
+    return '<section class="full">' . do_shortcode($content) . '</section>';
 }
-add_shortcode('full', 'ful_page_shortcode');
+add_shortcode('full', 'full_page_shortcode');
 
 
 

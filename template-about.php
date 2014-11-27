@@ -16,7 +16,7 @@ Template Name: Profile Page
 
 
 <div class="full-width">
-    <h2 class="text-center"><?php printf(__('Latest posts by %s', 'roots'), get_the_author_meta('first_name')); ?></h2>
+    <h2 class="text-center"><?php printf(__('Latest posts by %1&s', 'roots'), get_the_author_meta('first_name')); ?></h2>
     <?php
       $args = array(
           'length' => 4,
