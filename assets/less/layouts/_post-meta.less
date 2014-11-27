@@ -10,15 +10,16 @@
   }
 
   img, img& {
-    height: 40px;
-    width: 40px;
     border-radius: 100%;
-    border: 1px solid #EAEAEA;
-    margin-right: 10px;
   }
-  &.avatar-64 {
+  .avatar-64 & {
     height: 64px;
     width: 64px;
+  }
+
+  .huge & {
+    height: 150px;
+    width: 150px;
   }
 
 }
@@ -36,6 +37,11 @@
     float: right;
     .hidden-sm();
     .hidden-xs();
+  }
+  .author-avatar img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
   }
 }
 

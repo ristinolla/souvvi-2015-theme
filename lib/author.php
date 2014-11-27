@@ -9,17 +9,17 @@
 function modify_contact_methods($profile_fields) {
 
   // Add new fields
-  $profile_fields['twitter']          = __('Twitter Username' ,'xo');
-  $profile_fields['facebook']         = __('Facebook URL'     ,'xo');
-  $profile_fields['gplus']            = __('Google+ URL'      ,'xo');
-  $profile_fields['lastfm']           = __('Last FM username' ,'xo');
-  $profile_fields['flickr']           = __('Flickr username'  ,'xo');
-  $profile_fields['behance']          = __('Behance Username' ,'xo');
+  $profile_fields['twitter']          = __('Twitter Profile Url' ,'xo');
+  $profile_fields['facebook']         = __('Facebook Profile Url'     ,'xo');
+  $profile_fields['gplus']            = __('Google+ Profile Url'      ,'xo');
+  $profile_fields['lastfm']           = __('Last FM Profile Url' ,'xo');
+  $profile_fields['flickr']           = __('Flickr Profile Url'  ,'xo');
+  $profile_fields['behance']          = __('Behance Profile Url' ,'xo');
   $profile_fields['extra_url']        = __('Additional URL'   ,'xo');
   $profile_fields['extra_url_title']  = __('Additional URL Title (optional)','xo');
-  $profile_fields['vimeo']            = __('Vimeo username'   ,'xo');
-  $profile_fields['youtube']          = __('Youtube username' ,'xo');
-  $profile_fields['avatar_url']          = __('Avatar url (Use medium size)' ,'xo');
+  $profile_fields['vimeo']            = __('Vimeo Profile Url'   ,'xo');
+  $profile_fields['youtube']          = __('Youtube Profile Url' ,'xo');
+  $profile_fields['avatar_url']          = __('Avatar ID (Use medium size)' ,'xo');
   // Remove old fields
 
   unset($profile_fields['aim']);
@@ -96,9 +96,9 @@ function user_meta_list($user_id, $args)
 
       echo $before_item;
       printf('<a href="%2$s" title="%3$s">' . $linktext . '</a>',
-              $service,                                   //twitter
-              esc_url($urls[$service] . '' . $user_metas[$service][0]),   //username
-              $user_metas['first_name'][0]             //authorname
+              $service,                                 //twitter
+              esc_url($user_metas[$service][0]),        //username
+              $user_metas['first_name'][0]              //authorname
             );
       echo $after_item;
     }

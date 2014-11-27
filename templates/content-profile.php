@@ -9,7 +9,6 @@
 
     <div class="author-meta">
     <?php
-
       $args = array(
         'ul_class' => 'list-unstyled list-inline',
         'linktext' => '<i class="fa fa-2x fa-%1$s"></i>',

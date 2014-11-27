@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row" id="content">
 
 
   <?php if (!have_posts()) : ?>
@@ -8,7 +8,6 @@
     </div>
     <?php get_search_form(); ?>
   <?php endif; ?>
-
   <?php while (have_posts()) : the_post(); ?>
       <?php if(is_search()){
           get_template_part('templates/content', 'archive');

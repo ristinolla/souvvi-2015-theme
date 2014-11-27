@@ -8796,23 +8796,28 @@ a.top-btn:hover {
 .page-content > h2 {
   margin-top: 0;
 }
+/*
 .author-header {
   text-align: right;
   color: white;
-  font-weight: 600;
+  font-weight: @boldWeight;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .author-photo {
-  padding: 20px;
-  margin-top: -80px;
-  margin-right: 20px;
-  margin-left: 40px;
+  padding: @basemargin/2;
+  margin-top: -@basemargin*2;
+  margin-right: @basemargin/2;
+  margin-left: @basemargin;
   background: white;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
 }
-.author-photo img {
-  max-width: 100%;
-  height: auto;
-}
+*/
 .author-meta ul {
   padding-left: 20px;
   margin-right: 20px;
@@ -8823,6 +8828,13 @@ a.top-btn:hover {
 .hero-image img {
   width: 100%;
   height: auto;
+}
+.hero-header {
+  position: relative;
+}
+.header-content {
+  text-align: center;
+  margin-top: -160px;
 }
 .hentry {
   margin-bottom: 60px;
@@ -8931,7 +8943,7 @@ a.top-btn:hover {
   padding: 10px 26.66666667px;
 }
 .hentry section.half {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 @media (min-width: 768px) {
   .hentry section.half {
@@ -8992,16 +9004,17 @@ a.top-btn:hover {
 .avatar img,
 img.author-avatar,
 img.avatar {
-  height: 40px;
-  width: 40px;
   border-radius: 100%;
-  border: 1px solid #EAEAEA;
-  margin-right: 10px;
 }
-.author-avatar.avatar-64,
-.avatar.avatar-64 {
+.avatar-64 .author-avatar,
+.avatar-64 .avatar {
   height: 64px;
   width: 64px;
+}
+.huge .author-avatar,
+.huge .avatar {
+  height: 150px;
+  width: 150px;
 }
 .meta-top {
   text-align: center;
@@ -9021,6 +9034,11 @@ img.avatar {
   .meta-top .post-categories {
     display: none !important;
   }
+}
+.meta-top .author-avatar img {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
 }
 .post-categories,
 .post-tags {
@@ -9056,12 +9074,12 @@ img.avatar {
     }
   }*/
 }
-.post-edit-link {
+a.post-edit-link {
   padding: 7px 12px;
   background: #eeeeee;
   border-radius: 5px;
 }
-.post-edit-link:hover {
+a.post-edit-link:hover {
   background: #555555;
   color: white;
 }

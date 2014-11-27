@@ -1,10 +1,6 @@
 <div class="meta-top muted">
-  <span class="author-avatar">
-    <a  rel="author" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
-      <img src="<?php echo xo_user_avatar_url(get_the_author_meta('ID'), 'thumbnail'); ?>" alt="Markus" >
-    </a>
+  <?php get_template_part('templates/author', 'avatar'); ?>
 
-  </span>
   <span class="byline author vcard">
     <?php echo __('by', 'roots'); ?>
     <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="author" rel="author"><?php echo get_the_author(); ?></a></span>

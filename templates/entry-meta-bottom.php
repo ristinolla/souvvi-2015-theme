@@ -10,7 +10,7 @@
 
 	<?php if(has_tag() && get_the_tag_list() ): ?>
 		<div class="tags">
-	      <?php echo get_the_tag_list('<ul class="list-inline post-tags"><li>' . __('Tags', 'roots') . '</li><li>','</li><li>','</li></ul>'); ?>
+	      <?php echo get_the_tag_list('<ul class="list-inline post-tags"><li>' . __('Tags:', 'roots') . '</li><li>','</li><li>','</li></ul>'); ?>
 		</div>
 	<?php  endif; ?>
 
