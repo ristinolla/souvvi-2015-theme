@@ -15,7 +15,7 @@ Template Name: Profile Page
 <?php endwhile; ?>
 
 
-<div class="full-width">
+<div class="row full-width">
     <h2 class="text-center"><?php printf(__('Latest posts by %s', 'roots'), get_the_author_meta('first_name')); ?></h2>
     <?php
       $args = array(
@@ -26,7 +26,10 @@ Template Name: Profile Page
 
       pr_user_newest_posts($args);
     ?>
-    <div class="text-center padded">
-        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="button button-lg"><?php printf(__('See all posts by %s', 'roots'), get_the_author_meta('first_name')); ?></a>
-    </div>
+
+</div>
+<div class="row">
+  <div class="text-center padded">
+    <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" class="button button-lg"><?php printf(__('See all posts by %s', 'roots'), get_the_author_meta('first_name')); ?></a>
+  </div>
 </div>
