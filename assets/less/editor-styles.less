@@ -1,6 +1,27 @@
-@import "_variables";
+// Bootstrap
+@import "_bootstrap";
+@import "_variables"; // Bootstrap variable overrides and custom variables
+@import "_global";    // Base styling & custom mixins
+@import "/components/_typography";    // Base styling & custom mixins
 
-img {
-	width: 100%;
-	height: auto;
+body#tinymce.wp-editor {
+
+	background: white;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	p {
+		max-width: @content-max;
+		margin: 0 auto;
+		font-size: 1em;
+		line-height: 1.8em;
+		margin-top: @basemargin;
+		margin-bottom: @basemargin;
+
+		text-align: justify;
+		overflow-x: hidden;
+	}
+
 }

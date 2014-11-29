@@ -44,18 +44,20 @@ function roots_setup() {
   //add_theme_support('post-formats', array('aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio'));
 
   // Tell the TinyMCE editor to use a custom stylesheet
-  add_editor_style('/assets/css/editor-style.css');
+  add_editor_style('/assets/css/editor-styles.css');
 
-
+/*
   add_theme_support( 'infinite-scroll', array(
-    'type'           => 'scroll',
-    'footer_widgets' => true,
+    'type'           => 'click',
     'footer'         => 'site-footer',
     'container'      => 'content',
     'wrapper'        => false,
-    'posts_per_page' => false
   ) );
-
+*/
+  add_theme_support( 'infinite-scroll', array(
+    'container' => 'content',
+    'footer' => 'page',
+  ) );
 
 }
 add_action('after_setup_theme', 'roots_setup');

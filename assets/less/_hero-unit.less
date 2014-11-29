@@ -1,0 +1,77 @@
+.hero-unit {
+  position: relative;
+  color: white;
+  text-align: center;
+
+  background-position:55% 42%;
+  background-repeat: no-repeat;
+  border: none;
+  max-height: 700px;
+  @media (min-width: @screen-sm) {
+    background-position: 50% 33%;
+  }
+  header {
+    padding-top: 200px;
+    padding-bottom: 125px;
+    z-index: 1000;
+    position: relative;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    @media (min-width: @screen-sm) {
+      padding-top: 300px;
+      padding-bottom: 200px;
+    }
+  }
+  h1, h2 {
+    margin: 0 auto;
+    max-width: 80%;
+    word-wrap: break-word;
+  }
+  h1 {
+    font-size: 2em;
+    @media (min-width: @screen-sm) {
+      font-size: 3em;
+    }
+  }
+  .mid-logo {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    img, & {
+      width: 140px;
+      height: 140px;
+    }
+
+    margin-left: -70px;
+    border-radius: 100%;
+    background-size: cover;
+    background-image: url('../img/nauha-logo.png');
+    .svg & {
+      background-image: url('../img/nauha-logo.svg');
+    }
+
+    @media (min-width: @nav-break-point) {
+      img, & {
+        width: 200px;
+        height: 200px;
+      }
+      margin-left: -100px;
+      top: 30px;
+      z-index: 4000;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 100%;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+    }
+
+  }
+}
+
+.hero-background {
+  height: 200px;
+  background-position: 50% 64%;
+
+}
