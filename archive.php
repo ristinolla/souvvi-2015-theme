@@ -8,12 +8,10 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<div class="full-width">
-  <ul class="post-tiles">
+<div class="full-width post-tiles">
     <?php while (have_posts()) : the_post(); ?>
-        <?php get_template_part('templates/content', 'archive'); ?>
+        <?php get_template_part('templates/content', 'single'); ?>
     <?php endwhile; ?>
-  </ul>
 </div>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>

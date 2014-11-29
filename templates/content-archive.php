@@ -1,4 +1,4 @@
-<li class="post-tile" >
+<li class="post-tile">
 
   <a href="<?php echo get_the_permalink(); ?>">
      <?php

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xs-12 col-sm-5 col-md-4">
+  <div class="col-xs-12 col-sm-5 col-md-4 page-content">
 
         <div class="author-photo">
           <?php $user_id = get_the_author_meta('ID'); ?>

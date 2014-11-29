@@ -7776,6 +7776,14 @@ body.home {
 .full-width:after {
   clear: both;
 }
+.content-max,
+.page-header,
+.hentry > footer,
+.hentry > .comments-wrapper,
+.entry-content > *,
+.post-nav {
+  max-width: 45em;
+}
 .padded {
   margin-top: 40px;
   margin-bottom: 40px;
@@ -8838,6 +8846,12 @@ a.top-btn:hover {
   text-align: center;
   margin-top: -70px;
 }
+.page-header {
+  padding-bottom: 9px;
+  border-bottom: 1px solid #eeeeee;
+  margin: 40px auto 20px;
+  text-align: center;
+}
 .hentry {
   margin-bottom: 60px;
   float: left;
@@ -8849,7 +8863,6 @@ a.top-btn:hover {
 }
 .hentry > footer,
 .hentry > .comments-wrapper {
-  max-width: 40em;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -8862,37 +8875,6 @@ a.top-btn:hover {
     padding-left: 0;
     padding-right: 0;
   }
-}
-.hentry .entry-content p {
-  font-size: 1em;
-  line-height: 1.8em;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  text-align: justify;
-  overflow-x: hidden;
-}
-.hentry .entry-content > * {
-  max-width: 40em;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-@media screen and (min-width: 768px) {
-  .hentry .entry-content > * {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-.hentry .entry-content > figure {
-  padding-left: 0;
-  padding-right: 0;
-}
-.hentry .entry-content .full {
-  width: 100%;
-  max-width: none;
-  text-align: center;
 }
 .hentry img {
   max-width: 100%;
@@ -8943,26 +8925,60 @@ a.top-btn:hover {
   width: 100%;
   margin: 0;
 }
-.hentry figcaption.caption,
-.hentry .wp-caption-text,
-.hentry .gallery-caption {
+.entry-content p {
+  font-size: 1em;
+  line-height: 1.8em;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: justify;
+  overflow-x: hidden;
+}
+.entry-content > * {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 768px) {
+  .entry-content > * {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.entry-content > figure {
+  padding-left: 0;
+  padding-right: 0;
+}
+.entry-content .full {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+}
+.entry-content .full img {
+  display: block;
+  margin: 0 auto;
+}
+.entry-content figcaption.caption,
+.entry-content .wp-caption-text,
+.entry-content .gallery-caption {
   background: #eeeeee;
   padding: 10px 26.66666667px;
 }
-.hentry section.half {
+.entry-content section.half {
   padding-bottom: 20px;
 }
 @media (min-width: 768px) {
-  .hentry section.half {
+  .entry-content section.half {
     margin-bottom: 0;
     padding-right: 20px;
   }
-  .hentry section.half + section.half {
+  .entry-content section.half + section.half {
     padding-right: 0;
     padding-left: 20px;
   }
 }
-.hentry section + p {
+.entry-content section + p {
   margin: 0;
 }
 .hentry footer {
@@ -8994,7 +9010,6 @@ a.top-btn:hover {
   background: #eeeeee;
 }
 .post-nav {
-  max-width: 40em;
   margin-left: auto;
   margin-right: auto;
 }

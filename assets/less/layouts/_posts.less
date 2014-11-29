@@ -10,7 +10,7 @@
 
   > footer,
   > .comments-wrapper {
-    max-width: @content-max;
+    &:extend(.content-max);
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -22,46 +22,6 @@
       padding-right: 0;
     }
   }
-
-  .entry-content p {
-    font-size: 1em;
-    line-height: 1.8em;
-    margin-top: @basemargin;
-    margin-bottom: @basemargin;
-
-
-    text-align: justify;
-    overflow-x: hidden;
-
-  }
-
-  .entry-content > * {
-    max-width: @content-max;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-
-    padding-left: @basemargin/2;
-    padding-right: @basemargin/2;
-    @media screen and (min-width: @sm ) {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  .entry-content > figure {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-
-  .entry-content .full {
-    width: 100%;
-    max-width: none;
-    text-align: center;
-  }
-
-
 
   img {
     max-width: 100%;
@@ -77,35 +37,87 @@
     margin-bottom: @basemargin;
     text-align: center;
   }
+}
 
-  figure, .wp-caption {
-    float: none;
-    margin-top: @basemargin;
-    margin-bottom: @basemargin;
-    margin-left: auto;
-    margin-right: auto;
+.hentry figure,
+.hentry .wp-caption {
+  float: none;
+  margin-top: @basemargin;
+  margin-bottom: @basemargin;
+  margin-left: auto;
+  margin-right: auto;
 
-    > a, > img {
-      display: block;
+  > a, > img {
+    display: block;
 
 
-      &.full-width, &.super {
+    &.full-width, &.super {
+      width: 100%;
+      margin: 0;
+      &+figcaption {
         width: 100%;
         margin: 0;
-        &+figcaption {
-          width: 100%;
-          margin: 0;
-        }
       }
     }
   }
+}
 
+.entry-content p {
+  font-size: 1em;
+  line-height: 1.8em;
+  margin-top: @basemargin;
+  margin-bottom: @basemargin;
+
+
+  text-align: justify;
+  overflow-x: hidden;
+
+}
+
+.entry-content > * {
+  &:extend(.content-max);
+
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  padding-left: @basemargin/2;
+  padding-right: @basemargin/2;
+  @media screen and (min-width: @sm ) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.entry-content > figure {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+.entry-content .full {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+}
+
+
+
+
+.entry-content {
   figcaption.caption,
   .wp-caption-text,
   .gallery-caption {
     background: @miscBg;
     padding: @basemargin/4 @basemargin/1.5;
   }
+
 
 
   section.half {
@@ -150,7 +162,7 @@
 
 
 .post-nav {
-  max-width: @content-max;
+  &:extend(.content-max);
   margin-left: auto;
   margin-right: auto;
 }
