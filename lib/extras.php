@@ -216,3 +216,17 @@ function get_relative_url($var){
   $url = home_url( $path = $var, $scheme = "relative" );
   return $url;
 }
+
+
+/**
+ * Souvvi get url and replace with author url if not given
+ */
+
+ function souvvi_get_author_url(){
+
+   if(!get_the_author_meta('user_url')){
+     return get_author_posts_url(get_the_author_meta('ID'));
+   };
+   return get_the_author_meta('user_url', get_the_author_meta('ID') );
+
+ }
