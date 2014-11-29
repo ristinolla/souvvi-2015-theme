@@ -14,9 +14,10 @@ function roots_title() {
     if ($term) {
       return apply_filters('single_term_title', $term->name);
     } elseif (is_category()) {
-      return sprintf(__('<a href="/">Archive</a> &raquo; Category &raquo; %s', 'roots'), get_cat_name( get_query_var('cat') ));
-    } elseif (is_category()) {
-      return sprintf(__('<a href="/">Archive</a> &raquo; Category &raquo; %s', 'roots'), get_cat_name( get_query_var('tag') ));
+      return sprintf(__('<a href="%2$s">Archive</a> &raquo; Category &raquo; %1$s', 'roots'),
+          get_cat_name( get_query_var('cat') ),
+          esc_url( get_relative_url( "archive" ) )
+        );
     } elseif (is_post_type_archive()) {
       return apply_filters('the_title', get_queried_object()->labels->name);
     } elseif (is_day()) {
@@ -29,7 +30,11 @@ function roots_title() {
       $author = get_queried_object();
       return sprintf(__('Author &raquo; %s', 'roots'), apply_filters('the_author', is_object($author) ? $author->display_name : null));
     } else {
-      return single_cat_title('', false);
+      if(is_tag()){
+        return sprintf(__('<a href="/archive">Archive</a> &raquo; Tag &raquo; %s', 'roots'), single_cat_title('', false));
+      } else {
+        return single_cat_title('', false);
+      }
     }
   } elseif (is_search()) {
     return sprintf(__('Search / %s', 'roots'), get_search_query());
@@ -42,7 +47,7 @@ function roots_title() {
 
 
 // BACKUP
-function lkmroots_title() {
+function fffroots_title() {
   if (is_home()) {
     if (get_option('page_for_posts', true)) {
       return get_the_title(get_option('page_for_posts', true));
@@ -54,7 +59,7 @@ function lkmroots_title() {
     if ($term) {
       return apply_filters('single_term_title', $term->name);
     } elseif (is_category()) {
-      return sprintf(__('<a href="/archives">Archive</a> &raquo; Category &raquo; %s', 'roots'), apply_filters('single_term_title', $term->name));
+      return sprintf(__('<a href="/archive">Archive</a> &raquo; Category &raquo; %s', 'roots'), apply_filters('single_term_title', $term->name));
     } elseif (is_post_type_archive()) {
       return apply_filters('the_title', get_queried_object()->labels->name);
     } elseif (is_day()) {

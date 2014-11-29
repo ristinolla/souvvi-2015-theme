@@ -206,3 +206,13 @@ function addthis_scripts(){
 <?php
 }
 add_action('wp_head', 'addthis_scripts');
+
+
+/**
+ * RELATIVE ROOT URL
+ */
+
+function get_relative_url($var){
+  $url = home_url( $path = $var, $scheme = "relative" );
+  return $url;
+}
