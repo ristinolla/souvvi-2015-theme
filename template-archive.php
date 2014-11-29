@@ -3,7 +3,7 @@
 Template Name: Archive page
 */
 ?>
-<div class="row conten">
+<div class="row content">
   <?php while (have_posts()) : the_post(); ?>
     <?php get_template_part('templates/page', 'header'); ?>
     <div class="row archive-lists page-content">
