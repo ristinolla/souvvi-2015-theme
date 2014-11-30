@@ -22,7 +22,7 @@ function roots_setup() {
   add_theme_support('post-thumbnails');
   if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 500, 500, true);
+    set_post_thumbnail_size( 250, 250);
   }
 
   add_image_size( 'category-thumb', 500, 100, false);
