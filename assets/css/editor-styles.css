@@ -4914,8 +4914,10 @@ body#tinymce.wp-editor img {
   max-width: 100%;
   height: auto;
 }
-body#tinymce.wp-editor p {
+body#tinymce.wp-editor > * {
   max-width: 45em;
+}
+body#tinymce.wp-editor p {
   margin: 0 auto;
   font-size: 1em;
   line-height: 1.8em;
