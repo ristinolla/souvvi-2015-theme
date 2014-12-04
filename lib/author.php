@@ -199,13 +199,15 @@ function xo_user_avatar_url($user_id, $size){
 function xo_user_list()
 {
   # code...
+
   $args = array(
     'blog_id'      => 1,
     'meta_key'     => 'avatar_url',
     'orderby'      => 'nicename',
-    'order'        => 'ASC'
+    'order'        => 'ASC',
+    'exclude'      => array(1, 15, 13)
    );
-  echo '<div><ul class="list-inline">';
+  echo '<ul class="list-inline list-authors">';
 
   $blogusers = get_users($args);
   // Array of WP_User objects.
@@ -221,7 +223,7 @@ function xo_user_list()
    <?
   }
 
-  echo "</ul></div>";
+  echo "</ul>";
 
 }
 
