@@ -4916,6 +4916,7 @@ body#tinymce.wp-editor img {
 }
 body#tinymce.wp-editor > * {
   max-width: 45em;
+  margin: 0 auto;
 }
 body#tinymce.wp-editor p {
   margin: 0 auto;
