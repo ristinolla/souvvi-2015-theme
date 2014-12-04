@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row narrow-content">
 	<div class="col-xs-12 page-content">
 		<?php the_content(); ?>
 	</div>

@@ -6,5 +6,5 @@
 */
  ?>
 <a class="author-avatar" rel="author" href="<?php echo esc_url( souvvi_get_author_url() ); ?>">
-	<?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
+	<?php echo get_avatar( get_the_author_meta( 'ID' ), 50  ); ?>
 </a>
