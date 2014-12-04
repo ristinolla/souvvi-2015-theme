@@ -227,4 +227,33 @@ function xo_user_list()
 
 }
 
+
+function get_xo_user_list()
+{
+  # code...
+
+  $args = array(
+    'blog_id'      => 1,
+    'meta_key'     => 'avatar_url',
+    'orderby'      => 'nicename',
+    'order'        => 'ASC',
+    'exclude'      => array(1, 15, 13)
+  );
+  $output = '<ul class="list-inline list-authors">';
+
+  $blogusers = get_users($args);
+  // Array of WP_User objects.
+  foreach ( $blogusers as $user ) {
+    $output = $output . '<li class="biophoto">';
+    $output = $output . '<a href="' . $user->user_url . '">';
+    $output = $output . '<img class="img-circle" src="'. xo_user_avatar_url($user->ID, 'thumbnail') . '" alt="">';
+    $output = $output . '<h3 class="text-center">' . $user->first_name . '</h3>';
+    $output = $output . '</a></li>';
+  }
+
+  $output = $output . "</ul>";
+  return $output;
+}
+
+
 ?>

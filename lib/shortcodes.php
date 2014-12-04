@@ -49,8 +49,8 @@ function author_img_list_shortcode($atts) {
    extract( shortcode_atts( array(
       'exclude' => false,
    ), $atts ) );
-   if (function_exists("xo_user_list")) {
-     return xo_user_list();
+   if (function_exists("get_xo_user_list")) {
+     return get_xo_user_list();
    } else {
      return "Shortcode not instaled, user_list function not found";
    }
