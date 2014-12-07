@@ -7598,7 +7598,16 @@ a.top-btn:hover {
 .entry-content .third {
   padding-bottom: 1em;
 }
-@media screen and (min-width: 480px) {
+.entry-content .half p,
+.entry-content .third p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.entry-content .half p + p,
+.entry-content .third p + p {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
   .entry-content .half,
   .entry-content .third {
     padding-bottom: 0;

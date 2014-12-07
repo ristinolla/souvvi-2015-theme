@@ -107,8 +107,15 @@
 
   .half, .third {
     padding-bottom: 1em;
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    p + p {
+      margin-top: @basemargin;
+    }
   }
-  @media screen and (min-width: @xs ) {
+  @media screen and (min-width: @sm ) {
     .half, .third {
       padding-bottom: 0;
       display: inline-block;
@@ -121,7 +128,7 @@
         padding-left:  1em;
       }
     }
-    
+
     .third {
       width: 33%;
       padding-right: 1em;

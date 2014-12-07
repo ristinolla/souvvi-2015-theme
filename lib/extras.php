@@ -84,7 +84,8 @@ function roots_caption($output, $attr, $content) {
   $attributes .= ' class="wp-caption ' . esc_attr($attr['align']) . '"';
   //$attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
   $output  = '<figure' . $attributes .' style="max-width: ' . $attr['width']. 'px;">';
-  $output .= do_shortcode($content);
+  //$output .= do_shortcode($content);
+  $output .= xo_responsive_image($attr, $content);
   $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
   $output .= '</figure>';
 
@@ -92,6 +93,25 @@ function roots_caption($output, $attr, $content) {
 }
 add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
 
+function  xo_responsive_image($attr, $content){
+
+  $attachment_id = explode("_", $attr['id'])[1];
+
+  $img_full = wp_get_attachment_image_src( $attachment_id , 'full' );
+  $img_small = wp_get_attachment_image_src( $attachment_id , 'large' );
+
+  $output = sprintf('<img src="%1$s" srcset="%1$s %2$sw, %3$s %4$sw" alt="%5$s" id="%6$s">',
+            esc_url( $img_small[0] ),
+            $img_small[1],
+            esc_url( $img_full [0] ),
+            $img_full[1],
+            esc_attr($attr['caption']),
+            esc_attr($attr['id'])
+          );
+  return $output;
+
+
+}
 
 
 /**
