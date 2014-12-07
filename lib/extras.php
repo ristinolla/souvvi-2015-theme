@@ -104,7 +104,7 @@ function  xo_responsive_image($attr, $content){
   $img_full = wp_get_attachment_image_src( $attachment_id , 'full' );
   $img_small = wp_get_attachment_image_src( $attachment_id , 'large' );
 
-  $output = sprintf('<img src="%1$s" srcset="%1$s %2$sw, %3$s %4$sw" alt="%5$s" id="%6$s">',
+  $output = sprintf('<img src="%1$s" srcset="%1$s %2$sw, %3$s %4$sw" alt="%5$s" id="%6$s" rel="%6$s">',
             esc_url( $img_small[0] ),
             $img_small[1],
             esc_url( $img_full [0] ),
