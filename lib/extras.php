@@ -78,14 +78,16 @@ function roots_caption($output, $attr, $content) {
     return $content;
   }
 
-
   // Set up the attributes for the caption <figure>
   $attributes  = (!empty($attr['id']) ? ' id="' . esc_attr($attr['id']) . '"' : '' );
   $attributes .= ' class="wp-caption ' . esc_attr($attr['align']) . '"';
-  //$attributes .= ' style="width: ' . esc_attr($attr['width']) . 'px"';
   $output  = '<figure' . $attributes .' style="max-width: ' . $attr['width']. 'px;">';
-  //$output .= do_shortcode($content);
-  $output .= xo_responsive_image($attr, $content);
+  /* Check if it is an attacment */
+  if( !empty($attr['id']) ){
+    $output .= xo_responsive_image($attr, $content);
+  } else {
+    $output .= do_shortcode($content);
+  }
   $output .= '<figcaption class="caption wp-caption-text">' . $attr['caption'] . '</figcaption>';
   $output .= '</figure>';
 
@@ -93,6 +95,8 @@ function roots_caption($output, $attr, $content) {
 }
 add_filter('img_caption_shortcode', 'roots_caption', 10, 3);
 
+
+// Responsive image
 function  xo_responsive_image($attr, $content){
 
   $attachment_id = explode("_", $attr['id'])[1];
@@ -109,8 +113,6 @@ function  xo_responsive_image($attr, $content){
             esc_attr($attr['id'])
           );
   return $output;
-
-
 }
 
 
