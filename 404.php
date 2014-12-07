@@ -1,6 +1,6 @@
 <?php get_template_part('templates/page', 'header'); ?>
 
-<div class="centered">
+<div class="centered narrow-content">
 
 
   <p><?php _e('It looks like this was the result of either:', 'roots'); ?></p>

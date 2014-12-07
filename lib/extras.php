@@ -252,3 +252,49 @@ function get_relative_url($var){
    return get_the_author_meta('user_url', get_the_author_meta('ID') );
 
  }
+
+
+ /**
+  * META BOXES
+  */
+
+
+
+function souvvi_post_guide_add() {
+  add_meta_box( 'souvvi-post-guide', 'Souvvi - Postaus ohje', 'souvvi_post_guide_cb', 'post', 'normal', 'high' );
+}
+add_action( 'add_meta_boxes', 'souvvi_post_guide_add' );
+
+function souvvi_post_guide_cb( $post ){
+  ?>
+  <div>
+    <h3>Video-ohje: <a href="#">ffff</a></h3>
+    <h3>Postausohje</h3>
+    <ol>
+      <li>Optimoi kuvat esim. Lightroomin export toiminolla tai sitten iPhoton "Vie" toiminnolla. </li>
+      <li>Lataa kuvat käyttäen "Add Media" -painiketta (ei enään suoria linkkejä)</li>
+      <li>Aseta kuvan kooksi LARGE.</li>
+      <li>Valitse myös "Featured Image" oikealla olevasta laatikosta.</li>
+      <li>Aseta haluamasi kategoriat ja tagit</li>
+    </ol>
+
+    <h3>Huomioita</h3>
+    <ul style="list-style-type:square; padding-left: 40px;">
+      <li>Kuvien maksimi koko on <strong>2mt</strong> Kuvan resoluution tulisi olla kuitenkin ainakin <strong>1600px</strong>  pidemmältä kantilta.</li>
+      <li>Kuvatekstilliset kuvat menevät automaattisesti mahdollisimman leveäksi.</li>
+      <li>Ilman kuvatekstiä laitetut kuvat ovat tekstin levyisiä (kapeita)</li>
+      <li><strong>[full]tähän kuva[/full]</strong> shortcodea käyttämällä voit saada kuvan leveäksi ilman kuvatekstiä</li>
+      <li>Kuvia saa latettua myös rinnakkain seuraaville shortcodeilla
+        <ul style="list-style-type: disc; padding: 10px 0 10px 20px;">
+          <li><strong>[row][half] kuva tähän [/half][half] kuva tähän [/half][/row]</strong></li>
+          <li><strong>[row][third] kuva tähän [/third][third] kuva tähän [/third][third] kuva tähän [/third][/row]</strong></li>
+        </ul>
+      </li>
+      <li>käytä rivin jälkeen vain kerran Enteriä. Kappaleiden (paragraph) ja kuvien väliin tulee automaattisesti sopiva väli.</li>
+      <li>SHIFT+Enter saat uuden rivin ilman että aloitat uutta kappaletta</li>
+      <li>Kategorioita lisätään mahdollisimman harvoin ja on yläatson kategoria, mutta jos jokin kategoria puuttuu niin lisää vain.</li>
+      <li>Tageja taas voi laitta enemmän ja näillä sidotaan esimerkiksi samasta paikasta postatut postaukset tai esimerkiksi kaikki surffaus postaukset.</li>
+    </ul>
+  </div>
+  <?
+}
