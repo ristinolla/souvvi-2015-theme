@@ -87,8 +87,8 @@ figure {
   margin: 1em 40px;
 }
 hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 pre {
@@ -138,7 +138,8 @@ input {
 }
 input[type="checkbox"],
 input[type="radio"] {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
@@ -147,7 +148,6 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
@@ -183,7 +183,8 @@ th {
     text-shadow: none !important;
     color: #000 !important;
     background: transparent !important;
-    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
   }
   a,
   a:visited {
@@ -867,13 +868,11 @@ th {
 }
 * {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -1338,12 +1337,14 @@ kbd {
   color: #ffffff;
   background-color: #333333;
   border-radius: 3px;
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 kbd kbd {
   padding: 0;
   font-size: 100%;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 pre {
   display: block;
@@ -2296,7 +2297,6 @@ label {
 }
 input[type="search"] {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 input[type="radio"],
@@ -2344,7 +2344,7 @@ output {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
@@ -3124,7 +3124,8 @@ tbody.collapse.in {
   border-radius: 4px;
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
 }
 .dropdown-menu.pull-right {
   right: 0;
@@ -3766,7 +3767,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-right: 0;
   padding-left: 0;
   border-top: 1px solid transparent;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
   -webkit-overflow-scrolling: touch;
 }
 .navbar-collapse.in {
@@ -3776,7 +3778,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-collapse {
     width: auto;
     border-top: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .navbar-collapse.collapse {
     display: block !important;
@@ -3915,7 +3918,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-top: 0;
     background-color: transparent;
     border: 0;
-    box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   .navbar-nav .open .dropdown-menu > li > a,
   .navbar-nav .open .dropdown-menu .dropdown-header {
@@ -4879,17 +4883,8 @@ a.label:focus {
 }
 .fa-spin {
   -webkit-animation: spin 2s infinite linear;
-  -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
-}
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-  }
 }
 @-webkit-keyframes spin {
   0% {
@@ -4910,17 +4905,18 @@ a.label:focus {
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+       transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+       transform: rotate(359deg);
   }
 }
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -4928,7 +4924,6 @@ a.label:focus {
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -4936,7 +4931,6 @@ a.label:focus {
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   -o-transform: rotate(270deg);
   transform: rotate(270deg);
@@ -4944,7 +4938,6 @@ a.label:focus {
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
-  -moz-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   -o-transform: scale(-1, 1);
   transform: scale(-1, 1);
@@ -4952,7 +4945,6 @@ a.label:focus {
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
-  -moz-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   -o-transform: scale(1, -1);
   transform: scale(1, -1);
@@ -6365,7 +6357,8 @@ a.label:focus {
   content: "\f1e2";
 }
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   background-repeat: no-repeat;
 }
 html,
@@ -6488,7 +6481,6 @@ h2 {
 }
 .perspective {
   -webkit-perspective: 800px;
-  -moz-perspective: 800px;
   perspective: 800px;
 }
 button.button,
@@ -6567,7 +6559,6 @@ a.button-effect:after {
   background: #848c93;
   opacity: 0;
   -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
@@ -6612,8 +6603,6 @@ a.button-submit {
   padding: 15px 80px;
   outline: 1px solid rgba(0, 0, 0, 0);
   -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
   transform-style: preserve-3d;
   margin: auto 0;
@@ -6647,12 +6636,10 @@ a.button-submit:after {
   color: #358337;
   content: 'It worked!';
   -webkit-transform-origin: 0 100%;
-  -moz-transform-origin: 0 100%;
   -o-transform-origin: 0 100%;
   -ms-transform-origin: 0 100%;
   transform-origin: 0 100%;
   -webkit-transform: rotateX(90deg);
-  -moz-transform: rotateX(90deg);
   -o-transform: rotateX(90deg);
   -ms-transform: rotateX(90deg);
   transform: rotateX(90deg);
@@ -6667,12 +6654,10 @@ a.button-submit:before {
   font-weight: 700;
   font-family: 'Lato', Calibri, Arial, sans-serif;
   -webkit-transform-origin: 0 0;
-  -moz-transform-origin: 0 0;
   -o-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   -webkit-transform: rotateX(-90deg);
-  -moz-transform: rotateX(-90deg);
   -o-transform: rotateX(-90deg);
   -ms-transform: rotateX(-90deg);
   transform: rotateX(-90deg);
@@ -6682,12 +6667,10 @@ input.button-submit.button-success,
 a.button-submit.button-success {
   background: #aaa;
   -webkit-transform-origin: 50% 100%;
-  -moz-transform-origin: 50% 100%;
   -o-transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
   transform-origin: 50% 100%;
   -webkit-transform: rotateX(-90deg) translateY(100%);
-  -moz-transform: rotateX(-90deg) translateY(100%);
   -o-transform: rotateX(-90deg) translateY(100%);
   -ms-transform: rotateX(-90deg) translateY(100%);
   transform: rotateX(-90deg) translateY(100%);
@@ -6697,12 +6680,10 @@ input.button-submit.button-error,
 a.button-submit.button-error {
   background: #aaa;
   -webkit-transform-origin: 50% 0;
-  -moz-transform-origin: 50% 0;
   -o-transform-origin: 50% 0;
   -ms-transform-origin: 50% 0;
   transform-origin: 50% 0;
   -webkit-transform: rotateX(90deg) translateY(-100%);
-  -moz-transform: rotateX(90deg) translateY(-100%);
   -o-transform: rotateX(90deg) translateY(-100%);
   -ms-transform: rotateX(90deg) translateY(-100%);
   transform: rotateX(90deg) translateY(-100%);
@@ -6766,7 +6747,8 @@ a.button-submit.button-error {
   background-color: transparent;
   border: none;
   border-radius: 0;
-  box-shadow: 0 0px 0px transparent;
+  -webkit-box-shadow: 0 0px 0px transparent;
+          box-shadow: 0 0px 0px transparent;
   border-bottom: 1px solid #eeeeee;
 }
 .search-field + span {
@@ -6775,7 +6757,8 @@ a.button-submit.button-error {
 .search-field:focus {
   border-color: #e94e4e;
   outline: 0;
-  box-shadow: 0 0px 0px transparent;
+  -webkit-box-shadow: 0 0px 0px transparent;
+          box-shadow: 0 0px 0px transparent;
 }
 .search-field + span {
   opacity: 0;
@@ -6784,7 +6767,6 @@ a.button-submit.button-error {
   -o-transform: translate(-40, 0);
   transform: translate(-40, 0);
   -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
   -o-transition: -o-transform 1s;
   transition: transform 1s;
   -webkit-transition: color 0.3s;
@@ -6801,7 +6783,6 @@ a.button-submit.button-error {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
   -webkit-transition: -webkit-transform 1s;
-  -moz-transition: -moz-transform 1s;
   -o-transition: -o-transform 1s;
   transition: transform 1s;
   -webkit-transition: color 0.3s;
@@ -6871,7 +6852,8 @@ figure.alignnone {
 .hero,
 .banner {
   background-repeat: repeat;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   background-position: center center;
   color: white;
   text-align: center;
@@ -6906,7 +6888,6 @@ figure.alignnone {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
   -webkit-transition: -webkit-transform 0.2s;
-  -moz-transition: -moz-transform 0.2s;
   -o-transition: -o-transform 0.2s;
   transition: transform 0.2s;
   -webkit-transition: color 0.3s;
@@ -6923,7 +6904,6 @@ figure.alignnone {
   -o-transform: translate(0, -60);
   transform: translate(0, -60);
   -webkit-transition: -webkit-transform 0.2s;
-  -moz-transition: -moz-transform 0.2s;
   -o-transition: -o-transform 0.2s;
   transition: transform 0.2s;
   -webkit-transition: color 0.3s;
@@ -6978,7 +6958,8 @@ figure.alignnone {
   background-color: #eeeeee;
 }
 .navbar .dropdown-menu {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-radius: 0;
   border: none;
   background-color: #eeeeee;
@@ -7026,7 +7007,6 @@ figure.alignnone {
 .navbar-header.search-mode .search-toggle,
 .navbar-header.search-mode .navbar-brand {
   -webkit-transition: -webkit-transform 0.2s;
-  -moz-transition: -moz-transform 0.2s;
   -o-transition: -o-transform 0.2s;
   transition: transform 0.2s;
   -webkit-transition: opacity 0.3s;
@@ -7072,7 +7052,6 @@ figure.alignnone {
   -o-transform: translate(0, 0);
   transform: translate(0, 0);
   -webkit-transition: -webkit-transform 0.2s;
-  -moz-transition: -moz-transform 0.2s;
   -o-transition: -o-transform 0.2s;
   transition: transform 0.2s;
 }
@@ -7111,7 +7090,8 @@ figure.alignnone {
 li.menu-home a {
   background-image: url("../img/souvvi_logo.svg");
   background-position: center center;
-  background-size: contain;
+  -webkit-background-size: contain;
+          background-size: contain;
   background-repeat: no-repeat;
   margin-left: 15px;
   margin-right: 15px;
@@ -7153,7 +7133,6 @@ li.menu-home a:hover {
   background-color: #555555;
   top: 0px ;
   -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
@@ -7162,7 +7141,6 @@ li.menu-home a:hover {
   background-color: #555555;
   top: 0px ;
   -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
@@ -7173,7 +7151,6 @@ li.menu-home a:hover {
 .collapsed .hamburger:before {
   top: -8px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -7181,7 +7158,6 @@ li.menu-home a:hover {
 .collapsed .hamburger:after {
   top: 8px;
   -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -7348,7 +7324,8 @@ a.top-btn:hover {
   height: 100%;
   position: relative;
   background-repeat: no-repeat;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   color: #53595e;
   text-decoration: none;
   overflow: hidden;
@@ -7366,7 +7343,8 @@ a.top-btn:hover {
 .post-tile .post-thumb {
   height: 300px;
   width: 100%;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   background-position: center center;
 }
 .post-tile .header {
@@ -7427,7 +7405,6 @@ a.top-btn:hover {
   transition: all 0.3s ease-in-out;
   background: rgba(255, 255, 255, 0.8);
   -webkit-transform: translateX(-100%);
-  -moz-transform: translateX(-100%);
   -o-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -7435,7 +7412,6 @@ a.top-btn:hover {
 .post-tiles.animated-title:hover > div {
   opacity: 1;
   -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
   -o-transform: translateX(0px);
   -ms-transform: translateX(0px);
   transform: translateX(0px);
@@ -7479,6 +7455,10 @@ a.top-btn:hover {
 .author-meta li > span {
   font-weight: 600;
 }
+.hero-image {
+  overflow: hidden;
+  max-height: 500px;
+}
 .hero-image img {
   width: 100%;
   height: auto;
@@ -7491,7 +7471,7 @@ a.top-btn:hover {
   margin-top: -70px;
 }
 .list-authors li {
-  width: 33%;
+  width: 32.5%;
   text-align: center;
 }
 .list-authors img {
@@ -7613,6 +7593,33 @@ a.top-btn:hover {
 .entry-content .full img {
   display: block;
   margin: 0 auto;
+}
+.entry-content .half,
+.entry-content .third {
+  padding-bottom: 1em;
+}
+@media screen and (min-width: 480px) {
+  .entry-content .half,
+  .entry-content .third {
+    padding-bottom: 0;
+    display: inline-block;
+  }
+  .entry-content .half {
+    width: 50%;
+    padding-right: 1em;
+  }
+  .entry-content .half + .half {
+    padding-right: 0px;
+    padding-left: 1em;
+  }
+  .entry-content .third {
+    width: 33%;
+    padding-right: 1em;
+  }
+  .entry-content .third + .third {
+    padding-right: 0em;
+    padding-left: 1em;
+  }
 }
 .entry-content figcaption.caption,
 .entry-content .wp-caption-text,
@@ -7773,6 +7780,10 @@ a.post-edit-link:hover {
   opacity: 0;
   max-height: 0;
 }
+.comments ul,
+.comments ol {
+  list-style: none;
+}
 .comments li {
   margin-bottom: 40px;
 }
@@ -7813,4 +7824,4 @@ a.post-edit-link:hover {
 
 }
 */
-/*# sourceMappingURL=/souvvi_dev/wp-content/themes/souvvi-2015-theme/assets/css/main.css.map */
+/*# sourceMappingURL=main.css.map */

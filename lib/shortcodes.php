@@ -24,14 +24,15 @@ function row_shortcode($atts, $content = null) {
    }
 }
 */
+
 function row_shortcode($atts, $content = null) {
   extract( shortcode_atts( array(
     'first' => false,
   ), $atts ) );
 
-  return '<section class="row">' . do_shortcode($content) . '</section>';
+  return '<section class="row full">' . do_shortcode($content) . '</section>';
 }
-add_shortcode('row', 'half_page_shortcode');
+add_shortcode('row', 'row_shortcode');
 
 function half_page_shortcode($atts, $content = null) {
    extract( shortcode_atts( array(
@@ -41,6 +42,15 @@ function half_page_shortcode($atts, $content = null) {
     return '<div class="half">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('half', 'half_page_shortcode');
+
+function third_page_shortcode($atts, $content = null) {
+  extract( shortcode_atts( array(
+    'first' => false,
+  ), $atts ) );
+
+  return '<div class="third">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('third', 'third_page_shortcode');
 
 function full_page_shortcode($atts, $content = null) {
    extract( shortcode_atts( array(
