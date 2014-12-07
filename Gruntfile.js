@@ -182,6 +182,8 @@ module.exports = function(grunt) {
   ]);
   grunt.registerTask('build', [
     'jshint',
+    'less:dev',
+    'autoprefixer:dev',
     'less:build',
     'autoprefixer:build',
     'uglify',

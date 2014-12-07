@@ -4919,6 +4919,9 @@ body#tinymce.wp-editor div {
   max-width: 100%;
   height: auto;
 }
+body#tinymce.wp-editor .wp-caption {
+  max-width: 100%;
+}
 body#tinymce.wp-editor p {
   margin: 0 auto;
   font-size: 1em;

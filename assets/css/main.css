@@ -7595,6 +7595,9 @@ a.top-btn:hover {
   display: block;
   margin: 0 auto;
 }
+.entry-content section + section {
+  margin-top: 40px;
+}
 .entry-content .half,
 .entry-content .third {
   padding-bottom: 1em;
